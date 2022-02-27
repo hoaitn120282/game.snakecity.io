@@ -1102,10 +1102,10 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 414585510147610,
+							"sid": 290639954316991,
 							"parameters": {
 								"variable": "countDown",
-								"comparison": 5,
+								"comparison": 4,
 								"value": "0"
 							}
 						}

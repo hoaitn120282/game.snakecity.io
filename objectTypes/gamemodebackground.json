@@ -1,0 +1,57 @@
+{
+	"name": "GameModeBackground",
+	"plugin-id": "Sprite",
+	"sid": 900417436935879,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 281,
+						"height": 189,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5449024,
+						"collisionPoly": {
+							"points": [
+								0.02491103202846975,
+								0.037037037037037035,
+								0.5,
+								0,
+								0.9715302491103203,
+								0.037037037037037035,
+								0.99644128113879,
+								0.5,
+								0.9715302491103203,
+								0.9576719576719577,
+								0.5,
+								0.9947089947089947,
+								0.02491103202846975,
+								0.9576719576719577,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 673977247039998,
+				"name": "Animation 1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

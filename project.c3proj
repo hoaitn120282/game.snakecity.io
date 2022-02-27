@@ -365,6 +365,59 @@
 				],
 				"subfolders": [],
 				"name": "Textures"
+			},
+			{
+				"items": [
+					"GameModeExpirence",
+					"GameModeReward",
+					"GameModeBackground",
+					"GameModeHeader",
+					"GameModeIcon",
+					"GameModeWinRate"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"EasyExpirence",
+							"EasyPlay",
+							"EasyReward",
+							"EasyWinRate"
+						],
+						"subfolders": [],
+						"name": "Easy"
+					},
+					{
+						"items": [
+							"HardPlay",
+							"HardReward",
+							"HardWinExpirence",
+							"HardWinRate"
+						],
+						"subfolders": [],
+						"name": "Hard"
+					},
+					{
+						"items": [
+							"MediumExpirence",
+							"MediumPlay",
+							"MediumReward",
+							"MediumWinRate"
+						],
+						"subfolders": [],
+						"name": "Medium"
+					},
+					{
+						"items": [
+							"SupperPlay",
+							"SupperReward",
+							"SupperWinRate",
+							"SupperExpirence"
+						],
+						"subfolders": [],
+						"name": "Supper"
+					}
+				],
+				"name": "GameMode"
 			}
 		]
 	},
@@ -408,7 +461,8 @@
 	"layouts": {
 		"items": [
 			"Game",
-			"Home"
+			"Home",
+			"GameMode"
 		],
 		"subfolders": []
 	},
@@ -416,7 +470,8 @@
 		"items": [
 			"Engine",
 			"Home",
-			"Facebook"
+			"Facebook",
+			"GameMode"
 		],
 		"subfolders": []
 	},
