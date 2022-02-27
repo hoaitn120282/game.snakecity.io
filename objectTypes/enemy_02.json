@@ -1,0 +1,195 @@
+{
+	"name": "Enemy_02",
+	"plugin-id": "Sprite",
+	"sid": 634194040557949,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Style",
+			"type": "number",
+			"desc": "",
+			"sid": 366995006000329
+		},
+		{
+			"name": "Active",
+			"type": "number",
+			"desc": "",
+			"sid": 471087203133644
+		},
+		{
+			"name": "Speedy",
+			"type": "number",
+			"desc": "",
+			"sid": 164592516174782
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 999727280777995
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 400937432717206
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 69,
+						"height": 86,
+						"originX": 0.387097,
+						"originY": 0.5039370000000001,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\player_2.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3472856,
+						"collisionPoly": {
+							"points": [
+								0.7517240000000001,
+								0,
+								0.7517240000000001,
+								1,
+								0.186207,
+								1,
+								0,
+								0.626126,
+								0,
+								0.36936899999999995,
+								0.18965500000000002,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.12903200000000004,
+								"y": 0.511811
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 69,
+						"height": 86,
+						"originX": 0.387097,
+						"originY": 0.5039370000000001,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\player_2.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5089299,
+						"collisionPoly": {
+							"points": [
+								0.7517240000000001,
+								0,
+								0.7517240000000001,
+								1,
+								0.186207,
+								1,
+								0,
+								0.626126,
+								0,
+								0.36936899999999995,
+								0.18965500000000002,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.12903200000000004,
+								"y": 0.511811
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 69,
+						"height": 86,
+						"originX": 0.387097,
+						"originY": 0.5039370000000001,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\player_2.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6441839,
+						"collisionPoly": {
+							"points": [
+								0.7517240000000001,
+								0,
+								0.7517240000000001,
+								1,
+								0.186207,
+								1,
+								0,
+								0.626126,
+								0,
+								0.36936899999999995,
+								0.18965500000000002,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.12903200000000004,
+								"y": 0.511811
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 69,
+						"height": 86,
+						"originX": 0.387097,
+						"originY": 0.5039370000000001,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\player_2.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3058434,
+						"collisionPoly": {
+							"points": [
+								0.7517240000000001,
+								0,
+								0.7517240000000001,
+								1,
+								0.186207,
+								1,
+								0,
+								0.626126,
+								0,
+								0.36936899999999995,
+								0.18965500000000002,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.12903200000000004,
+								"y": 0.511811
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 346461559751478,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

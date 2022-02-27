@@ -1,0 +1,63 @@
+{
+	"name": "scroll",
+	"plugin-id": "Sprite",
+	"sid": 472742364061216,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 749786148235714
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1014,
+						"height": 924,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\scroll.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1940292,
+						"collisionPoly": {
+							"points": [
+								0.366864,
+								0.402597,
+								0.5,
+								0.272727,
+								0.633136,
+								0.402597,
+								0.751479,
+								0.5,
+								0.633136,
+								0.597403,
+								0.5,
+								0.727273,
+								0.366864,
+								0.597403,
+								0.248521,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 346070572970236,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

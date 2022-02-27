@@ -1,0 +1,63 @@
+{
+	"name": "Photo_profile",
+	"plugin-id": "Sprite",
+	"sid": 498024435134682,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 428923834582604
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 85,
+						"height": 82,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\Photo_profile.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1142653,
+						"collisionPoly": {
+							"points": [
+								0.027027,
+								0.0243902,
+								0.5,
+								0,
+								0.972973,
+								0.0243902,
+								1,
+								0.5,
+								0.972973,
+								0.97561,
+								0.5,
+								1,
+								0.027027,
+								0.97561,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 280464392799687,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"name": "TXT_TURN_NUMBER",
+	"plugin-id": "Text",
+	"sid": 901526734602708,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "lunarray_LiteTween",
+			"name": "LiteTween",
+			"sid": 255852889936064
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 345432330706311
+		}
+	],
+	"effectTypes": []
+}

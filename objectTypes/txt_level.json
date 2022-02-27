@@ -1,0 +1,31 @@
+{
+	"name": "TXT_LEVEL",
+	"plugin-id": "Spritefont2",
+	"sid": 566307712034629,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 169204039337163
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 724109573437857
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 540,
+		"height": 660,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\60x60_2.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 4120786,
+		"useCollisionPoly": true
+	}
+}

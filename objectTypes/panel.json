@@ -1,0 +1,67 @@
+{
+	"name": "Panel",
+	"plugin-id": "Sprite",
+	"sid": 611436783732921,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 388,
+						"height": 96,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\Untitled-3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 676202,
+						"collisionPoly": {
+							"points": [
+								0.00283286,
+								0.0816327,
+								0.498584,
+								0.0408163,
+								0.991501,
+								0.0918367,
+								0.249292,
+								0.489796,
+								0.869688,
+								0.44898,
+								0.498584,
+								0.826531,
+								0.00283286,
+								0.897959
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.249292,
+								"y": 0.244898
+							},
+							{
+								"name": "Imagepoint 2",
+								"x": 0.249292,
+								"y": 0.683673
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 160375426223376,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

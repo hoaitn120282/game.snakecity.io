@@ -1,0 +1,50 @@
+{
+	"name": "chec",
+	"plugin-id": "Sprite",
+	"sid": 966777130681079,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "active",
+			"type": "number",
+			"desc": "",
+			"sid": 814826731630818
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 900284912565069
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 47,
+						"height": 150,
+						"originX": 0.510638,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1600481,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 871950033495801,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

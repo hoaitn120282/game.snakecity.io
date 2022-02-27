@@ -1,0 +1,20 @@
+{
+	"name": "TiledBackground",
+	"plugin-id": "TiledBg",
+	"sid": 9080128464616144,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 1600,
+		"height": 1146,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\bg_tile.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 9247076,
+		"useCollisionPoly": true
+	}
+}

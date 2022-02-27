@@ -1,0 +1,57 @@
+{
+	"name": "gamepad_middle",
+	"plugin-id": "Sprite",
+	"sid": 404541326074889,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 361,
+						"height": 361,
+						"originX": 0.501385,
+						"originY": 0.501385,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\large_blue_button.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 207512,
+						"collisionPoly": {
+							"points": [
+								0.199446,
+								0.199446,
+								0.498615,
+								0.0747922,
+								0.800554,
+								0.199446,
+								0.925208,
+								0.498615,
+								0.803324,
+								0.803324,
+								0.498615,
+								0.933518,
+								0.196676,
+								0.803324,
+								0.0692521,
+								0.498615
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 384993843244796,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

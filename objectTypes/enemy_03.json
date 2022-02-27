@@ -1,0 +1,195 @@
+{
+	"name": "Enemy_03",
+	"plugin-id": "Sprite",
+	"sid": 183913463153556,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Style",
+			"type": "number",
+			"desc": "",
+			"sid": 778914603699994
+		},
+		{
+			"name": "Active",
+			"type": "number",
+			"desc": "",
+			"sid": 889033742082416
+		},
+		{
+			"name": "Speedy",
+			"type": "number",
+			"desc": "",
+			"sid": 740727980163205
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 938304493634880
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 924918179258125
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 88,
+						"height": 76,
+						"originX": 0.5039370000000001,
+						"originY": 0.612903,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\player_3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5342595,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.24827599999999994,
+								1,
+								0.24827599999999994,
+								1,
+								0.813793,
+								0.626126,
+								1,
+								0.36936899999999995,
+								1,
+								0,
+								0.810345
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.511811,
+								"y": 0.870968
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 88,
+						"height": 76,
+						"originX": 0.5039370000000001,
+						"originY": 0.612903,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\player_3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 509297,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.24827599999999994,
+								1,
+								0.24827599999999994,
+								1,
+								0.813793,
+								0.626126,
+								1,
+								0.36936899999999995,
+								1,
+								0,
+								0.810345
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.511811,
+								"y": 0.870968
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 88,
+						"height": 76,
+						"originX": 0.5039370000000001,
+						"originY": 0.612903,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\player_3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2975509,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.24827599999999994,
+								1,
+								0.24827599999999994,
+								1,
+								0.813793,
+								0.626126,
+								1,
+								0.36936899999999995,
+								1,
+								0,
+								0.810345
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.511811,
+								"y": 0.870968
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 88,
+						"height": 76,
+						"originX": 0.5039370000000001,
+						"originY": 0.612903,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\player_3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 216068,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.24827599999999994,
+								1,
+								0.24827599999999994,
+								1,
+								0.813793,
+								0.626126,
+								1,
+								0.36936899999999995,
+								1,
+								0,
+								0.810345
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.511811,
+								"y": 0.870968
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 787173881752044,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

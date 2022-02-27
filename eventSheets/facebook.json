@@ -1,0 +1,358 @@
+{
+	"name": "Facebook",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 107356854427268,
+					"parameters": {
+						"first-value": "LayoutName",
+						"comparison": 0,
+						"second-value": "\"Home\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 388458354345375,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 421252004655744
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 598484506354813,
+							"parameters": {
+								"audio-file": "concept_bg_level",
+								"loop": "looping",
+								"volume": "0",
+								"tag-optional": "\"home\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 263753326133336,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						}
+					],
+					"sid": 645718362687844
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 620163766914905,
+					"parameters": {
+						"first-value": "LayoutName",
+						"comparison": 0,
+						"second-value": "\"Game\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 183980530412431,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 974764511466850
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 545859553215329,
+							"parameters": {
+								"audio-file": "concept_bg_level",
+								"loop": "looping",
+								"volume": "0",
+								"tag-optional": "\"music\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 124924063597194,
+							"parameters": {
+								"tag": "\"home\""
+							}
+						}
+					],
+					"sid": 300092484033824
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Banner Kiz10"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 598488486940946
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "moregamess",
+					"sid": 827594494874013,
+					"parameters": {
+						"x": "ViewportRight(\"home\")-150"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "moregamess",
+					"sid": 273147564253559,
+					"parameters": {
+						"y": "ViewportBottom(\"home\")-40"
+					}
+				}
+			],
+			"sid": 536135133588621
+		},
+		{
+			"eventType": "comment",
+			"text": "Banner APPS WISE"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 682323069518331,
+					"parameters": {
+						"object": "moregamess"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "open-url-in-new-window",
+					"objectClass": "Browser",
+					"sid": 498887616568401,
+					"parameters": {
+						"url": "\"https://snakecity.io\"",
+						"tag": "\"NewWindow\""
+					}
+				}
+			],
+			"sid": 547905305498075
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 447467067923189,
+					"parameters": {
+						"object": "Photo_profile"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 587905993732944,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Photo_profile",
+							"sid": 408242087550984,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log-in",
+							"objectClass": "Facebook",
+							"sid": 325404795701877,
+							"parameters": {
+								"permissions": "\"email,public_profile,user_friends\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Photo_profile",
+							"sid": 381116606071559,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "restart-fade",
+							"objectClass": "PhotoFaceBookConnect",
+							"sid": 868039284293035,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "set-text",
+							"objectClass": "PhotoFaceBookConnect",
+							"sid": 213214354829811,
+							"parameters": {
+								"text": "\"Connected!\""
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 512186479632816,
+							"disabled": true,
+							"parameters": {
+								"time-scale": "0"
+							}
+						}
+					],
+					"sid": 101816775533493
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 760283717437519
+						}
+					],
+					"actions": [
+						{
+							"id": "log-out",
+							"objectClass": "Facebook",
+							"sid": 322868179983492,
+							"disabled": true
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Photo_profile",
+							"sid": 246101030259813,
+							"disabled": true,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "restart-fade",
+							"objectClass": "PhotoFaceBookConnect",
+							"sid": 943101622136404,
+							"disabled": true,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "set-text",
+							"objectClass": "PhotoFaceBookConnect",
+							"sid": 704193074199154,
+							"parameters": {
+								"text": "\"Disconnected!\""
+							}
+						}
+					],
+					"sid": 374319547493892
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "When connected"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-name-available",
+					"objectClass": "Facebook",
+					"sid": 167541665565017
+				}
+			],
+			"actions": [
+				{
+					"id": "load-image-from-url",
+					"objectClass": "Photo_profile",
+					"sid": 332461056287426,
+					"parameters": {
+						"uri": "\"https://graph.facebook.com/\"&Facebook.UserIDStr&\"/picture?type=large&redirect=true&width=74&height=82\"",
+						"size": "keep-current-size",
+						"cross-origin": "anonymous"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "PhotoFaceBookConnect",
+					"sid": 107252200414423,
+					"parameters": {
+						"text": "\"Connected!\""
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 905265954181430,
+					"parameters": {
+						"time-scale": "1"
+					}
+				}
+			],
+			"sid": 915234781748436
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-user-logged-out",
+					"objectClass": "Facebook",
+					"sid": 787248331056462
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "PhotoFaceBookConnect",
+					"sid": 274664853046288,
+					"parameters": {
+						"text": "\"Disconnected!\""
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 198636460136204,
+					"parameters": {
+						"time-scale": "1"
+					}
+				}
+			],
+			"sid": 901435971353223
+		}
+	],
+	"sid": 634509533184491
+}

@@ -1,0 +1,31 @@
+{
+	"name": "TXT_TIME_LINE",
+	"plugin-id": "Spritefont2",
+	"sid": 542543271775312,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 117955398410611
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 693352330237432
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 540,
+		"height": 660,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\60x60_3.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 6936580,
+		"useCollisionPoly": true
+	}
+}

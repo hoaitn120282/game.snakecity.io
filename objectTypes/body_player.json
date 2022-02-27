@@ -1,0 +1,57 @@
+{
+	"name": "Body_Player",
+	"plugin-id": "Sprite",
+	"sid": 2302722169587025,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 60,
+						"height": 60,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\character_body-3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6966842,
+						"collisionPoly": {
+							"points": [
+								0.847222,
+								0.847222,
+								0.5,
+								1,
+								0.15277799999999997,
+								0.847222,
+								0,
+								0.5,
+								0.15277799999999997,
+								0.15277799999999997,
+								0.5,
+								0.01388900000000004,
+								0.847222,
+								0.15277799999999997,
+								1,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 4041096151523161,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,564 @@
+{
+	"name": "Home",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Facebook"
+		},
+		{
+			"eventType": "variable",
+			"name": "apiUrlHome",
+			"type": "string",
+			"initialValue": "https://api.snakecity.io/api/",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 283243689014572
+		},
+		{
+			"eventType": "variable",
+			"name": "tempDataHome",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 930142411787026
+		},
+		{
+			"eventType": "variable",
+			"name": "userDataHome",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 416563511895258
+		},
+		{
+			"eventType": "variable",
+			"name": "tokenHome",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 784034012559728
+		},
+		{
+			"eventType": "variable",
+			"name": "turnNemberHome",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 114477631630298
+		},
+		{
+			"eventType": "variable",
+			"name": "turnLimitHome",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 821527818694915
+		},
+		{
+			"eventType": "variable",
+			"name": "walletIDHome",
+			"type": "string",
+			"initialValue": "",
+			"comment": "WalletID of User",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 142672469327137
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 756064228003939
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 339513252770038
+				},
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 740111581097360,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "show"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 288816321148185,
+					"parameters": {
+						"variable": "Style_Background",
+						"value": "choose(0,1,2)"
+					}
+				},
+				{
+					"id": "pin-to-object",
+					"objectClass": "show_effect2",
+					"sid": 968861123205657,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "logo_home",
+						"mode": "position-angle"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btn_home_buy_turn",
+					"sid": 137353335539468,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "TXT_HOME_ALERT_NO_TURN",
+					"sid": 465965221883157,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 450509810137858,
+					"parameters": {
+						"variable": "walletIDHome",
+						"value": "Browser.QueryParam(\"walletID\")"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 329148929006068,
+					"parameters": {
+						"variable": "tokenHome",
+						"value": "Browser.QueryParam(\"token\")"
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 465035170034723,
+					"parameters": {
+						"header": "\"Authorization\"",
+						"value": "\"Bearer \"&tokenHome"
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 554721839370568,
+					"parameters": {
+						"header": "\"Access-Control-Allow-Origin: *\"",
+						"value": "\"*\""
+					}
+				},
+				{
+					"id": "request-url",
+					"objectClass": "AJAX",
+					"sid": 120521436791836,
+					"parameters": {
+						"tag": "\"GetTurnLimitHome\"",
+						"url": "apiUrlHome&\"turns/\"&walletIDHome"
+					}
+				}
+			],
+			"sid": 425242840821894,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 675488872827863,
+							"parameters": {
+								"variable": "Style_Background",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "TiledBackground",
+							"sid": 256099393126980,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TiledBackground2",
+							"sid": 683608596991042,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TiledBackground3",
+							"sid": 917397086601675,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 777590708212039
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 312731210455840,
+							"parameters": {
+								"variable": "Style_Background",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "TiledBackground2",
+							"sid": 693578132531854,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TiledBackground",
+							"sid": 910715536486399,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TiledBackground3",
+							"sid": 315778638942182,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 222020457036863
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 318751960919253,
+							"parameters": {
+								"variable": "Style_Background",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "TiledBackground3",
+							"sid": 895403224277406,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TiledBackground2",
+							"sid": 193465419846201,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TiledBackground",
+							"sid": 478520986570862,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 805173335433891
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game Started Home",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 159486310239005,
+							"parameters": {
+								"tag": "\"GetTurnLimitHome\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 283000314283801,
+							"parameters": {
+								"variable": "userDataHome",
+								"value": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 161940414151347,
+							"parameters": {
+								"variable": "tempDataHome",
+								"value": "tokenat(userDataHome,3,\",\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 143480669351403,
+							"parameters": {
+								"variable": "turnLimitHome",
+								"value": "tokenat(tempDataHome,1,\":\")"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 768313577248067,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 451343326639882,
+							"parameters": {
+								"variable": "tempDataHome",
+								"value": "tokenat(userDataHome,2,\",\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 676126894065885,
+							"parameters": {
+								"variable": "turnNemberHome",
+								"value": "tokenat(tempDataHome,1,\":\")"
+							}
+						}
+					],
+					"sid": 687261994099647,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 489165609032851,
+									"parameters": {
+										"first-value": "turnNemberHome",
+										"comparison": 5,
+										"second-value": "turnLimitHome"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "btn_play",
+									"sid": 653048118413341
+								},
+								{
+									"id": "set-position",
+									"objectClass": "btn_home_buy_turn",
+									"sid": 920194231847017,
+									"parameters": {
+										"x": "434",
+										"y": "402"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "btn_home_buy_turn",
+									"sid": 374974310487973,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "TXT_HOME_ALERT_NO_TURN",
+									"sid": 363488612853337,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 402475929955094
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 953270666550423,
+							"parameters": {
+								"object": "btn_home_buy_turn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-url",
+							"objectClass": "Browser",
+							"sid": 940151419889715,
+							"parameters": {
+								"url": "\"http://dashboard.snakecity.io/\"",
+								"target": "parent"
+							}
+						}
+					],
+					"sid": 621392565782390
+				}
+			],
+			"sid": 185190714676248
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 544326725802454
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 682865493456088
+				}
+			],
+			"sid": 665752584735035
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 907197372943440
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "moregamess",
+					"sid": 215730582132568,
+					"parameters": {
+						"x": "ViewportRight(\"home\")-150"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "moregamess",
+					"sid": 147950853092441,
+					"parameters": {
+						"y": "ViewportBottom(\"home\")-40"
+					}
+				}
+			],
+			"sid": 706443750076709
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 453449069715378,
+					"parameters": {
+						"object": "btn_play"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 835848442911430,
+					"parameters": {
+						"audio-file": "click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 781714601365388,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 952993831458895
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 987133825644738,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 135603862217175
+		}
+	],
+	"sid": 353680609505884
+}

@@ -1,0 +1,68 @@
+{
+	"name": "trophy_game_over_1",
+	"plugin-id": "Sprite",
+	"sid": 631400417417929,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "lunarray_LiteTween",
+			"name": "LiteTween",
+			"sid": 481122534106138
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 758872587391703
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 102,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\image 548.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8900455,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0.078125,
+								1,
+								0,
+								0.828125,
+								0.5,
+								0.65625,
+								0.65625,
+								0.5,
+								1,
+								0.34375,
+								0.65625,
+								0.1875,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 763460507007254,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

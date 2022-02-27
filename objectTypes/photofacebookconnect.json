@@ -1,0 +1,31 @@
+{
+	"name": "PhotoFaceBookConnect",
+	"plugin-id": "Spritefont2",
+	"sid": 359905864035478,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 691411596791782
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 713158819119309
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 540,
+		"height": 660,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\60x60_2.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 2009143,
+		"useCollisionPoly": true
+	}
+}

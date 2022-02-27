@@ -1,0 +1,83 @@
+{
+	"name": "Player",
+	"plugin-id": "Sprite",
+	"sid": 4295186356926135,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Power",
+			"type": "number",
+			"desc": "",
+			"sid": 916372161967696
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 4163620408879964
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 4976330401525711
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 230095970779297
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 82,
+						"height": 85,
+						"originX": 0.612903,
+						"originY": 0.5039370000000001,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\player_3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6916488,
+						"collisionPoly": {
+							"points": [
+								0.810345,
+								0,
+								1,
+								0.36936899999999995,
+								1,
+								0.626126,
+								0.813793,
+								1,
+								0.24827599999999994,
+								1,
+								0.24827599999999994,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.870968,
+								"y": 0.511811
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 3688287263147802,
+				"name": "Default",
+				"isLooping": true,
+				"isPingPong": true,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"name": "Particles",
+	"plugin-id": "Particles",
+	"sid": 8141557279245927,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 760025203686750
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 60,
+		"height": 60,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\character_body.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 662139,
+		"useCollisionPoly": true
+	}
+}

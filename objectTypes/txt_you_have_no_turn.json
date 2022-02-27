@@ -1,0 +1,20 @@
+{
+	"name": "TXT_YOU_HAVE_NO_TURN",
+	"plugin-id": "Text",
+	"sid": 778089966341904,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "lunarray_LiteTween",
+			"name": "LiteTween",
+			"sid": 907642793564278
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 139056050404095
+		}
+	],
+	"effectTypes": []
+}

@@ -1,0 +1,153 @@
+{
+	"name": "Body_Enemy_03",
+	"plugin-id": "Sprite",
+	"sid": 646103263680098,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 61,
+						"height": 60,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\character_body-3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3945251,
+						"collisionPoly": {
+							"points": [
+								0.847222,
+								0.847222,
+								0.5,
+								1,
+								0.15277799999999997,
+								0.847222,
+								0,
+								0.5,
+								0.15277799999999997,
+								0.15277799999999997,
+								0.5,
+								0.01388900000000004,
+								0.847222,
+								0.15277799999999997,
+								1,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 61,
+						"height": 60,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\character_body-3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9266863,
+						"collisionPoly": {
+							"points": [
+								0.847222,
+								0.847222,
+								0.5,
+								1,
+								0.15277799999999997,
+								0.847222,
+								0,
+								0.5,
+								0.15277799999999997,
+								0.15277799999999997,
+								0.5,
+								0.01388900000000004,
+								0.847222,
+								0.15277799999999997,
+								1,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 61,
+						"height": 60,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\character_body-3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3808217,
+						"collisionPoly": {
+							"points": [
+								0.847222,
+								0.847222,
+								0.5,
+								1,
+								0.15277799999999997,
+								0.847222,
+								0,
+								0.5,
+								0.15277799999999997,
+								0.15277799999999997,
+								0.5,
+								0.01388900000000004,
+								0.847222,
+								0.15277799999999997,
+								1,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 61,
+						"height": 60,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\character_body-3.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6729072,
+						"collisionPoly": {
+							"points": [
+								0.847222,
+								0.847222,
+								0.5,
+								1,
+								0.15277799999999997,
+								0.847222,
+								0,
+								0.5,
+								0.15277799999999997,
+								0.15277799999999997,
+								0.5,
+								0.01388900000000004,
+								0.847222,
+								0.15277799999999997,
+								1,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 260749039549682,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

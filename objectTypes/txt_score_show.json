@@ -1,0 +1,31 @@
+{
+	"name": "TXT_Score_Show",
+	"plugin-id": "Spritefont2",
+	"sid": 787993932006159,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 700172731684936
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 176658745896981
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 540,
+		"height": 660,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\60x60_2.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5063069,
+		"useCollisionPoly": true
+	}
+}

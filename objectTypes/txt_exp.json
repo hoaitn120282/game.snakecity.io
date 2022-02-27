@@ -1,0 +1,20 @@
+{
+	"name": "TXT_EXP",
+	"plugin-id": "Text",
+	"sid": 743854717720837,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "lunarray_LiteTween",
+			"name": "LiteTween",
+			"sid": 630829461446453
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 779085811828821
+		}
+	],
+	"effectTypes": []
+}

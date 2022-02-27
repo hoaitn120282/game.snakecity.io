@@ -1,0 +1,73 @@
+{
+	"name": "show_effect2",
+	"plugin-id": "Sprite",
+	"sid": 847083577107893,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 221313511050750
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 740616019895361
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 141022689033054
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 82,
+						"height": 77,
+						"originX": 0.5,
+						"originY": 0.506494,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\show_effect.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2860741,
+						"collisionPoly": {
+							"points": [
+								0.317073,
+								0.337662,
+								0.5,
+								0.363636,
+								0.597561,
+								0.428571,
+								0.609756,
+								0.493506,
+								0.609756,
+								0.584416,
+								0.5,
+								0.662338,
+								0.304878,
+								0.675325,
+								0.329268,
+								0.493506
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 334838054589987,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

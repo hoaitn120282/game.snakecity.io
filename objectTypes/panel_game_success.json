@@ -1,0 +1,59 @@
+{
+	"name": "panel_game_success",
+	"plugin-id": "Sprite",
+	"sid": 949672867108564,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "lunarray_LiteTween",
+			"name": "LiteTween",
+			"sid": 334841732013389
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1022,
+						"height": 795,
+						"originX": 0.5,
+						"originY": 0.500629,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\panel_gameover.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2038016,
+						"collisionPoly": {
+							"points": [
+								0.0651928,
+								0,
+								0.920682,
+								0,
+								0.920682,
+								1,
+								0.896733,
+								1,
+								0.512229,
+								1,
+								0.126394,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 534543477164085,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

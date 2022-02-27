@@ -1,0 +1,63 @@
+{
+	"name": "home_trofeus",
+	"plugin-id": "Sprite",
+	"sid": 591296280767417,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 740270998355624
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 260,
+						"height": 150,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\home_trofeus.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7843578,
+						"collisionPoly": {
+							"points": [
+								0.176923,
+								0.306667,
+								0.5,
+								0.06,
+								0.811538,
+								0.326667,
+								0.992308,
+								0.5,
+								0.834615,
+								0.713333,
+								0.5,
+								0.813333,
+								0.188462,
+								0.673333,
+								0.0269231,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 585203248763464,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

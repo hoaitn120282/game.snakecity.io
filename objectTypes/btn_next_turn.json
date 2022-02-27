@@ -1,0 +1,68 @@
+{
+	"name": "btn_next_turn",
+	"plugin-id": "Sprite",
+	"sid": 339380829983925,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "lunarray_LiteTween",
+			"name": "LiteTween",
+			"sid": 435781499650190
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 781605756552687
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 303,
+						"height": 119,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\btn_again.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8059779,
+						"collisionPoly": {
+							"points": [
+								0.0320856,
+								0.0833333,
+								0.5,
+								0,
+								0.967914,
+								0.0833333,
+								1,
+								0.5,
+								0.967914,
+								0.916667,
+								0.5,
+								1,
+								0.0320856,
+								0.916667,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 237091905035598,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

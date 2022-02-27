@@ -1,0 +1,68 @@
+{
+	"name": "btn_back_won",
+	"plugin-id": "Sprite",
+	"sid": 599552321646021,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "lunarray_LiteTween",
+			"name": "LiteTween",
+			"sid": 298463407969544
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 799671670877756
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 374,
+						"height": 144,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\btn_back.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1020141,
+						"collisionPoly": {
+							"points": [
+								0.0320856,
+								0.0833333,
+								0.5,
+								0,
+								0.967914,
+								0.0833333,
+								1,
+								0.5,
+								0.967914,
+								0.916667,
+								0.5,
+								1,
+								0.0320856,
+								0.916667,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 811425519240178,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

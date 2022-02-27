@@ -1,0 +1,64 @@
+{
+	"name": "btn_turbo",
+	"plugin-id": "Sprite",
+	"sid": 904604227694857,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Active_Turbo",
+			"type": "number",
+			"desc": "",
+			"sid": 822508326406884
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 388,
+						"height": 96,
+						"originX": 0.501385,
+						"originY": 0.501385,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\large_blue_button.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7232872,
+						"collisionPoly": {
+							"points": [
+								0.14404400000000006,
+								0.15235500000000002,
+								0.501385,
+								0,
+								0.847645,
+								0.146814,
+								1,
+								0.504155,
+								0.858726,
+								0.867036,
+								0.509695,
+								1,
+								0.13573400000000002,
+								0.853186,
+								0,
+								0.49861500000000003
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 489054076490658,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

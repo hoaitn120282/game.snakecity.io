@@ -1,0 +1,36 @@
+{
+	"name": "TXT_HEADER_REWARD_NUMBER",
+	"plugin-id": "Spritefont2",
+	"sid": 850153081170533,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 552368752783427
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 769714827696266
+		},
+		{
+			"behaviorId": "lunarray_LiteTween",
+			"name": "LiteTween",
+			"sid": 684399960107797
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 540,
+		"height": 660,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\60x60_2.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 972901,
+		"useCollisionPoly": true
+	}
+}

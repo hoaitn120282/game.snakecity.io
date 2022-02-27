@@ -1,0 +1,20 @@
+{
+	"name": "TXT_SCORE_PANEL_HEADER",
+	"plugin-id": "Text",
+	"sid": 792563941526913,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "lunarray_LiteTween",
+			"name": "LiteTween",
+			"sid": 487024904682324
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 480728629621872
+		}
+	],
+	"effectTypes": []
+}

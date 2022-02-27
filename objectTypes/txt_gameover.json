@@ -1,0 +1,96 @@
+{
+	"name": "TXT_GameOver",
+	"plugin-id": "Sprite",
+	"sid": 861653668609257,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "lunarray_LiteTween",
+			"name": "LiteTween",
+			"sid": 965576732582911
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 886410334650066
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 285,
+						"height": 35,
+						"originX": 0.501348,
+						"originY": 0.501859,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\txt_gameOver.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7580207,
+						"collisionPoly": {
+							"points": [
+								0.0377358,
+								0.0520446,
+								0.498652,
+								0.0111524,
+								0.989218,
+								0.0148699,
+								0.997305,
+								0.498141,
+								0.929919,
+								0.903346,
+								0.498652,
+								0.732342,
+								0.0700809,
+								0.903346,
+								0.0404313,
+								0.498141
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 240,
+						"height": 37,
+						"originX": 0.501333,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\txt_YOU_WON.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2597128,
+						"collisionPoly": {
+							"points": [
+								0.0646900269541779,
+								0.08921933085501858,
+								0.5,
+								0.08921933085501858,
+								0.5902964959568733,
+								0.5613382899628253,
+								0.9595687331536388,
+								0.9442379182156134,
+								0.5,
+								0.9516728624535316,
+								0.11859838274932614,
+								0.8327137546468402
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 227942301040107,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

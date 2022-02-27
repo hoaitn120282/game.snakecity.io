@@ -1,0 +1,632 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 27602,
+	"name": "Snake City",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Facebook",
+			"name": "Facebook",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Function",
+			"name": "Function",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Multiplayer",
+			"name": "Multiplayer",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "lunarray_LiteTween",
+			"name": "Lite Tween",
+			"author": "lunarray",
+			"version": "1.7",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "custom",
+			"name": "Custom",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		}
+	],
+	"uniqueId": "1kbnpl3ps90d4",
+	"objectTypes": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"AJAX",
+					"Audio",
+					"Browser",
+					"Facebook",
+					"Button",
+					"Function",
+					"Keyboard",
+					"LocalStorage",
+					"Mouse",
+					"Multiplayer",
+					"Touch",
+					"ArrayWallet"
+				],
+				"subfolders": [],
+				"name": "Plugins"
+			},
+			{
+				"items": [
+					"Body_Enemy_01",
+					"Body_Enemy_02",
+					"Body_Enemy_03",
+					"Body_Enemy_04",
+					"Enemy_01",
+					"Enemy_02",
+					"Enemy_03",
+					"Enemy_04"
+				],
+				"subfolders": [],
+				"name": "Enemies"
+			},
+			{
+				"items": [
+					"Body_Player",
+					"Player"
+				],
+				"subfolders": [],
+				"name": "Players"
+			},
+			{
+				"items": [
+					"btn_next_turn",
+					"btn_back",
+					"btn_buy_reward",
+					"btn_claim_reward",
+					"btn_claim_reward_submit",
+					"btn_play",
+					"btn_home_buy_turn",
+					"btn_next_turn_won",
+					"btn_back_won"
+				],
+				"subfolders": [],
+				"name": "Buttons"
+			},
+			{
+				"items": [
+					"TiledBackground",
+					"TiledBackground2",
+					"TiledBackground3"
+				],
+				"subfolders": [],
+				"name": "Background"
+			},
+			{
+				"items": [
+					"bar_level",
+					"bar_Shield",
+					"bar_solid",
+					"btn_turbo",
+					"camera",
+					"chec",
+					"gamepad",
+					"gamepad_middle",
+					"Guide",
+					"home_trofeus",
+					"ico_trophy_1",
+					"ico_trophy_2",
+					"ico_trophy_3",
+					"inimigo",
+					"logo_home",
+					"moregamess",
+					"Panel",
+					"panel_game_success",
+					"Particles",
+					"Particles2",
+					"Photo_profile",
+					"PhotoFaceBookConnect",
+					"Food",
+					"scroll",
+					"show_background_GameOver",
+					"show_effect",
+					"show_effect2",
+					"space_1",
+					"space_2",
+					"space_3",
+					"space_4",
+					"star_home_",
+					"star_home_2",
+					"star_home_3",
+					"Start_Panel",
+					"trophy_game_over_1",
+					"trophy_game_over_2",
+					"trophy_game_over_3"
+				],
+				"subfolders": [],
+				"name": "GamePanel"
+			},
+			{
+				"items": [
+					"TXT_GameOver",
+					"TXT_HEADER_PANEL",
+					"TXT_HEADER_REWARD_NUMBER",
+					"TXT_LEVEL",
+					"TXT_LIMITATION_TURN",
+					"TXT_REWARD_NUMBER",
+					"TXT_Score_Show",
+					"TXT_TIME_LINE",
+					"TXT_HOME_ALERT_NO_TURN",
+					"TXT_SCORE_PANEL_HEADER",
+					"TXT_EXP",
+					"TXT_HEADER_EXP",
+					"TXT_REWARD",
+					"TXT_TURN_NUMBER",
+					"TXT_YOU_HAVE_NO_TURN",
+					"TXT_YOU_HAVE_TURNS",
+					"TXT_COUNT_DOWN"
+				],
+				"subfolders": [],
+				"name": "Textures"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [
+		{
+			"members": [
+				"Enemy_01",
+				"space_1"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"Enemy_02",
+				"space_2"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"Enemy_03",
+				"space_3"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"Enemy_04",
+				"space_4"
+			],
+			"selectMode": "normal"
+		}
+	],
+	"families": {
+		"items": [
+			"Enemys"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Game",
+			"Home"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"Engine",
+			"Home",
+			"Facebook"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [
+				{
+					"name": "concept_bg_end.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 682805332942893
+				},
+				{
+					"name": "concept_bg_level.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 534013336676804
+				},
+				{
+					"name": "Intro_Enter.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 897881171678071
+				},
+				{
+					"name": "Trophies.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 161777060964209
+				},
+				{
+					"name": "Eating.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 124726238177431
+				},
+				{
+					"name": "click.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 411561681785013
+				},
+				{
+					"name": "levels_completed.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 658791640409910
+				},
+				{
+					"name": "click.m4a",
+					"type": "audio/mp4",
+					"sid": 979164527970480
+				},
+				{
+					"name": "concept_bg_end.m4a",
+					"type": "audio/mp4",
+					"sid": 742812129898373
+				},
+				{
+					"name": "concept_bg_level.m4a",
+					"type": "audio/mp4",
+					"sid": 361517941960354
+				},
+				{
+					"name": "Eating.m4a",
+					"type": "audio/mp4",
+					"sid": 736709367163758
+				},
+				{
+					"name": "Intro_Enter.m4a",
+					"type": "audio/mp4",
+					"sid": 673178248930684
+				},
+				{
+					"name": "levels_completed.m4a",
+					"type": "audio/mp4",
+					"sid": 335508487759476
+				},
+				{
+					"name": "Trophies.m4a",
+					"type": "audio/mp4",
+					"sid": 257558382857495
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 975203840103346,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 636422780548548,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-114.png",
+					"type": "image/png",
+					"sid": 566526001015851,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 270191253273234,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 327714920413291,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 629664095082919,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "The Era of snake! It's our product develop base on crypto!",
+		"version": "1.0.0.0",
+		"author": "Henry Tran",
+		"authorEmail": "henry.tran.gtsvietnam@gmail.com",
+		"authorWebsite": "https://snakecity.io",
+		"appId": "com.henrytran.snakecity",
+		"pixelRounding": false,
+		"useLoaderLayout": true,
+		"fullscreenMode": "scale-outer",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "any",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "progress-logo",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "file"
+	},
+	"viewportWidth": 854,
+	"viewportHeight": 480,
+	"firstLayout": "Home"
+}

@@ -1,0 +1,524 @@
+{
+	"name": "Food",
+	"plugin-id": "Sprite",
+	"sid": 9076266595755398,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 2527081085543773
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 5694574961349546
+		},
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 460922899253278
+		},
+		{
+			"behaviorId": "custom",
+			"name": "CustomMovement",
+			"sid": 820454224677724
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 63,
+						"height": 49,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\collectable_flat_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5856136,
+						"collisionPoly": {
+							"points": [
+								0.177778,
+								0.144444,
+								0.522222,
+								0.0166667,
+								0.861111,
+								0.172222,
+								0.983333,
+								0.525,
+								0.830555,
+								0.861111,
+								0.466667,
+								0.977778,
+								0.127778,
+								0.8,
+								0.0166667,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 62,
+						"height": 67,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\collectable_flat_02.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4132697,
+						"collisionPoly": {
+							"points": [
+								0.211111,
+								0.211111,
+								0.5,
+								0.0888889,
+								0.788889,
+								0.211111,
+								0.911111,
+								0.5,
+								0.788889,
+								0.788889,
+								0.5,
+								0.911111,
+								0.211111,
+								0.788889,
+								0.0888889,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 80,
+						"height": 61,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\collectable_flat_03.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7410191,
+						"collisionPoly": {
+							"points": [
+								0.288889,
+								0.288889,
+								0.5,
+								0.188889,
+								0.722222,
+								0.277778,
+								0.822222,
+								0.5,
+								0.722222,
+								0.722222,
+								0.5,
+								0.811111,
+								0.288889,
+								0.711111,
+								0.2,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 65,
+						"height": 62,
+						"originX": 0.5,
+						"originY": 0.507692,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\level_3_collectable_atom_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2070827,
+						"collisionPoly": {
+							"points": [
+								0.21875,
+								0.215385,
+								0.5,
+								0.0923077,
+								0.78125,
+								0.215385,
+								0.90625,
+								0.492308,
+								0.78125,
+								0.784615,
+								0.5,
+								0.892308,
+								0.21875,
+								0.784615,
+								0.09375,
+								0.492308
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 103,
+						"height": 97,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\level_3_collectable_cog_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8135116,
+						"collisionPoly": {
+							"points": [
+								0.211111,
+								0.211111,
+								0.5,
+								0.0888889,
+								0.788889,
+								0.211111,
+								0.911111,
+								0.5,
+								0.788889,
+								0.788889,
+								0.5,
+								0.911111,
+								0.211111,
+								0.788889,
+								0.0888889,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 69,
+						"height": 59,
+						"originX": 0.5,
+						"originY": 0.507692,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\level_3_collectable_star_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8323956,
+						"collisionPoly": {
+							"points": [
+								0.21875,
+								0.215385,
+								0.5,
+								0.107692,
+								0.78125,
+								0.215385,
+								0.90625,
+								0.492308,
+								0.78125,
+								0.784615,
+								0.5,
+								0.892308,
+								0.21875,
+								0.784615,
+								0.09375,
+								0.492308
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 70,
+						"height": 68,
+						"originX": 0.5,
+						"originY": 0.507692,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\level_1_collectable_atom_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 177801,
+						"collisionPoly": {
+							"points": [
+								0.21875,
+								0.215385,
+								0.5,
+								0.0923077,
+								0.78125,
+								0.215385,
+								0.90625,
+								0.492308,
+								0.78125,
+								0.784615,
+								0.5,
+								0.892308,
+								0.21875,
+								0.784615,
+								0.09375,
+								0.492308
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 103,
+						"height": 97,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\level_1_collectable_cog_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6229473,
+						"collisionPoly": {
+							"points": [
+								0.211111,
+								0.211111,
+								0.5,
+								0.0888889,
+								0.788889,
+								0.211111,
+								0.911111,
+								0.5,
+								0.788889,
+								0.788889,
+								0.5,
+								0.911111,
+								0.211111,
+								0.788889,
+								0.0888889,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 72,
+						"height": 65,
+						"originX": 0.5,
+						"originY": 0.507692,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\level_1_collectable_star_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2429910,
+						"collisionPoly": {
+							"points": [
+								0.21875,
+								0.215385,
+								0.5,
+								0.107692,
+								0.78125,
+								0.215385,
+								0.90625,
+								0.492308,
+								0.78125,
+								0.784615,
+								0.5,
+								0.892308,
+								0.21875,
+								0.784615,
+								0.09375,
+								0.492308
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 66,
+						"height": 65,
+						"originX": 0.5,
+						"originY": 0.507692,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\level_2_collectable_atom_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3930877,
+						"collisionPoly": {
+							"points": [
+								0.21875,
+								0.215385,
+								0.5,
+								0.0923077,
+								0.78125,
+								0.215385,
+								0.90625,
+								0.492308,
+								0.78125,
+								0.784615,
+								0.5,
+								0.892308,
+								0.21875,
+								0.784615,
+								0.09375,
+								0.492308
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 81,
+						"height": 77,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\level_2_collectable_cog_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2380297,
+						"collisionPoly": {
+							"points": [
+								0.211111,
+								0.211111,
+								0.5,
+								0.0888889,
+								0.788889,
+								0.211111,
+								0.911111,
+								0.5,
+								0.788889,
+								0.788889,
+								0.5,
+								0.911111,
+								0.211111,
+								0.788889,
+								0.0888889,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 74,
+						"height": 53,
+						"originX": 0.5,
+						"originY": 0.507692,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\level_2_collectable_star_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 651069,
+						"collisionPoly": {
+							"points": [
+								0.21875,
+								0.215385,
+								0.5,
+								0.107692,
+								0.78125,
+								0.215385,
+								0.90625,
+								0.492308,
+								0.78125,
+								0.784615,
+								0.5,
+								0.892308,
+								0.21875,
+								0.784615,
+								0.09375,
+								0.492308
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 69,
+						"height": 61,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\level_3_collectable_cog_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9565710,
+						"collisionPoly": {
+							"points": [
+								0.211111,
+								0.211111,
+								0.5,
+								0.0888889,
+								0.788889,
+								0.211111,
+								0.911111,
+								0.5,
+								0.788889,
+								0.788889,
+								0.5,
+								0.911111,
+								0.211111,
+								0.788889,
+								0.0888889,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 87,
+						"height": 70,
+						"originX": 0.5,
+						"originY": 0.507692,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\images\\images que posso usar\\level_3_collectable_atom_01.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9874054,
+						"collisionPoly": {
+							"points": [
+								0.21875,
+								0.215385,
+								0.5,
+								0.0923077,
+								0.78125,
+								0.215385,
+								0.90625,
+								0.492308,
+								0.78125,
+								0.784615,
+								0.5,
+								0.892308,
+								0.21875,
+								0.784615,
+								0.09375,
+								0.492308
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 86,
+						"height": 87,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\start.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6318704,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.26,
+								0.5,
+								0,
+								0.961538,
+								0.5,
+								0.865385,
+								0.86,
+								0.5,
+								0.88,
+								0.134615,
+								0.86,
+								0.0576923,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 257849114440212,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

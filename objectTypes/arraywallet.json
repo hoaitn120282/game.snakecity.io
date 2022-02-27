@@ -1,0 +1,14 @@
+{
+	"name": "ArrayWallet",
+	"plugin-id": "Arr",
+	"sid": 145943268309828,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "turns",
+			"type": "string",
+			"desc": "",
+			"sid": 452971547613340
+		}
+	]
+}

@@ -1,0 +1,63 @@
+{
+	"name": "star_home_2",
+	"plugin-id": "Sprite",
+	"sid": 860879582417676,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 844819355116822
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 109,
+						"height": 116,
+						"originX": 0.504587,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Eliel Bony\\Desktop\\slither.io_gamepad\\star_home_2.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 427943,
+						"collisionPoly": {
+							"points": [
+								0.293578,
+								0.275862,
+								0.495413,
+								0.198276,
+								0.743119,
+								0.241379,
+								0.770642,
+								0.5,
+								0.743119,
+								0.758621,
+								0.495413,
+								0.836207,
+								0.302752,
+								0.715517,
+								0.0917431,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 852400711854860,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
