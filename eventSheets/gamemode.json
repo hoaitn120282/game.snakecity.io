@@ -1,0 +1,207 @@
+{
+	"name": "GameMode",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Setup Global Base"
+		},
+		{
+			"eventType": "variable",
+			"name": "GameMode",
+			"type": "string",
+			"initialValue": "EASY",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 740886358972242
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "SetupBase",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 434913952879222
+		},
+		{
+			"eventType": "comment",
+			"text": "Menu controls"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "MenuControls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 256341142256826,
+							"parameters": {
+								"object": "EasyPlay"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 356429686459402,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 229108908364567,
+							"parameters": {
+								"variable": "GameMode",
+								"value": "\"EASY\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 475701085195523,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 888591255766989
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 437232266038938,
+							"parameters": {
+								"object": "MediumPlay"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 327046534481175,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 880145777145817,
+							"parameters": {
+								"variable": "GameMode",
+								"value": "\"MEDIUM\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 965793443574688,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 993930751165426
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 170096143343886,
+							"parameters": {
+								"object": "HardPlay"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 602327256936921,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 708911257963770,
+							"parameters": {
+								"variable": "GameMode",
+								"value": "\"HARD\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 488681191071899,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 678485341869140
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 259470512179875,
+							"parameters": {
+								"object": "SupperPlay"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 602730673768460,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 888738713278532,
+							"parameters": {
+								"variable": "GameMode",
+								"value": "\"SUPPER\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 733202004878298,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 678686867264669
+				}
+			],
+			"sid": 117467681153295
+		}
+	],
+	"sid": 397201978094273
+}
