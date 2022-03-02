@@ -308,11 +308,6 @@
 			],
 			"actions": [
 				{
-					"id": "reset-global-variables",
-					"objectClass": "System",
-					"sid": 940779924948346
-				},
-				{
 					"id": "request-fullscreen",
 					"objectClass": "Browser",
 					"sid": 973368553236741,

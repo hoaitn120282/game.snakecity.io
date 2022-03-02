@@ -1,0 +1,57 @@
+{
+	"name": "WaterPlayerIcon2",
+	"plugin-id": "Sprite",
+	"sid": 920670924473839,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 98,
+						"height": 160,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7353335,
+						"collisionPoly": {
+							"points": [
+								0.27,
+								0.1656441717791411,
+								0.5,
+								0.024539877300613498,
+								0.74,
+								0.15337423312883436,
+								0.87,
+								0.5,
+								0.75,
+								0.8466257668711656,
+								0.5,
+								0.9815950920245399,
+								0.24,
+								0.8466257668711656,
+								0.13,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 361527660508469,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
