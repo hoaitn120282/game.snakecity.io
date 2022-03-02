@@ -1,5 +1,5 @@
 // NOTE: This definition file is auto generated - any changes you make will not be saved
-// 2/26/2022 7:04:31 PM
+// 3/2/2022 9:22:33 AM
 
 declare function runOnStartup(cb: (runtime: IRuntime) => void): void;
 
@@ -42,7 +42,10 @@ declare var IRuntime:  { new(): IRuntime };
 type VariableType = Record<string, string | boolean | number | null | undefined>;
 
 interface IRuntimeObjects {
-	['WinRate']: IObjectClass<IWinRate>;
+	['WaterPlayerIcon2']: IObjectClass<IWaterPlayerIcon2>;
+	['WaterPlayerIcon']: IObjectClass<IWaterPlayerIcon>;
+	['Water2']: IObjectClass<IWater2>;
+	['Water']: IObjectClass<IWater>;
 	['TXT_YOU_HAVE_TURNS']: IObjectClass<ITXT_YOU_HAVE_TURNS>;
 	['TXT_YOU_HAVE_NO_TURN']: IObjectClass<ITXT_YOU_HAVE_NO_TURN>;
 	['TXT_TURN_NUMBER']: IObjectClass<ITXT_TURN_NUMBER>;
@@ -75,18 +78,16 @@ interface IRuntimeObjects {
 	['star_home_3']: IObjectClass<Istar_home_3>;
 	['star_home_2']: IObjectClass<Istar_home_2>;
 	['star_home_']: IObjectClass<Istar_home_>;
+	['Sprite2']: IObjectClass<ISprite2>;
 	['Sprite']: IObjectClass<ISprite>;
 	['space_4']: IObjectClass<Ispace_4>;
 	['space_3']: IObjectClass<Ispace_3>;
 	['space_2']: IObjectClass<Ispace_2>;
 	['space_1']: IObjectClass<Ispace_1>;
-	['SkillLevelHeader']: IObjectClass<ISkillLevelHeader>;
-	['SkillLevelBackground']: IObjectClass<ISkillLevelBackground>;
 	['show_effect2']: IObjectClass<Ishow_effect2>;
 	['show_effect']: IObjectClass<Ishow_effect>;
 	['show_background_GameOver']: IObjectClass<Ishow_background_GameOver>;
 	['scroll']: IObjectClass<Iscroll>;
-	['Reward']: IObjectClass<IReward>;
 	['Player']: IObjectClass<IPlayer>;
 	['PhotoFaceBookConnect']: IObjectClass<IPhotoFaceBookConnect>;
 	['Photo_profile']: IObjectClass<IPhoto_profile>;
@@ -108,18 +109,32 @@ interface IRuntimeObjects {
 	['ico_trophy_3']: IObjectClass<Iico_trophy_3>;
 	['ico_trophy_2']: IObjectClass<Iico_trophy_2>;
 	['ico_trophy_1']: IObjectClass<Iico_trophy_1>;
+	['HydraPlaces']: IObjectClass<IHydraPlaces>;
+	['HydraMana']: IObjectClass<IHydraMana>;
+	['HydraLevel']: IObjectClass<IHydraLevel>;
+	['HydraHP']: IObjectClass<IHydraHP>;
+	['HydraHeader2']: IObjectClass<IHydraHeader2>;
+	['HydraHeader']: IObjectClass<IHydraHeader>;
 	['home_trofeus']: IObjectClass<Ihome_trofeus>;
 	['HardWinRate']: IObjectClass<IHardWinRate>;
 	['HardWinExpirence']: IObjectClass<IHardWinExpirence>;
 	['HardReward']: IObjectClass<IHardReward>;
 	['HardPlay']: IObjectClass<IHardPlay>;
 	['Guide']: IObjectClass<IGuide>;
+	['GateMale']: IObjectClass<IGateMale>;
 	['gamepad_middle']: IObjectClass<Igamepad_middle>;
 	['gamepad']: IObjectClass<Igamepad>;
+	['GameModeWinRate']: IObjectClass<IGameModeWinRate>;
+	['GameModeReward']: IObjectClass<IGameModeReward>;
+	['GameModeIcon']: IObjectClass<IGameModeIcon>;
+	['GameModeHeader']: IObjectClass<IGameModeHeader>;
+	['GameModeExpirence']: IObjectClass<IGameModeExpirence>;
+	['GameModeBackground']: IObjectClass<IGameModeBackground>;
 	['Function']: IObjectClass<IFunction>;
 	['Food']: IObjectClass<IFood>;
+	['FirePlayerIcon']: IObjectClass<IFirePlayerIcon>;
+	['Fire']: IObjectClass<IFire>;
 	['Facebook']: IObjectClass<IFacebook>;
-	['Expirence']: IObjectClass<IExpirence>;
 	['EasyWinRate']: IObjectClass<IEasyWinRate>;
 	['EasyReward']: IObjectClass<IEasyReward>;
 	['EasyPlay']: IObjectClass<IEasyPlay>;
@@ -146,8 +161,11 @@ interface IRuntimeObjects {
 	['bar_solid']: IObjectClass<Ibar_solid>;
 	['bar_Shield']: IObjectClass<Ibar_Shield>;
 	['bar_level']: IObjectClass<Ibar_level>;
+	['BackgroundMana']: IObjectClass<IBackgroundMana>;
+	['BackgroundHP']: IObjectClass<IBackgroundHP>;
 	['Audio']: IObjectClass<IAudio>;
 	['ArrayWallet']: IObjectClass<IArrayWallet>;
+	['ArcaneHeader']: IObjectClass<IArcaneHeader>;
 	['AJAX']: IObjectClass<IAJAX>;
 	['Enemy_04']: IObjectClass<IEnemy_04>;
 	['Enemy_03']: IObjectClass<IEnemy_03>;
@@ -351,15 +369,48 @@ interface IObjectClass<T = IInstance> {
 }
 declare var IObjectClass: { new(): IObjectClass };
 
-interface IWinRateVars extends VariableType {
+interface IWaterPlayerIcon2Vars extends VariableType {
 	
 }
-interface IWinRateBehaviors extends Record<string, IBehaviorInstance> {
+interface IWaterPlayerIcon2Behaviors extends Record<string, IBehaviorInstance> {
 	
 }
-interface IWinRate extends ITextInstance {
-	instVars: IWinRateVars;
-	behaviors: IWinRateBehaviors;
+interface IWaterPlayerIcon2 extends ISpriteInstance {
+	instVars: IWaterPlayerIcon2Vars;
+	behaviors: IWaterPlayerIcon2Behaviors;
+}
+
+interface IWaterPlayerIconVars extends VariableType {
+	
+}
+interface IWaterPlayerIconBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IWaterPlayerIcon extends ISpriteInstance {
+	instVars: IWaterPlayerIconVars;
+	behaviors: IWaterPlayerIconBehaviors;
+}
+
+interface IWater2Vars extends VariableType {
+	
+}
+interface IWater2Behaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IWater2 extends ISpriteInstance {
+	instVars: IWater2Vars;
+	behaviors: IWater2Behaviors;
+}
+
+interface IWaterVars extends VariableType {
+	
+}
+interface IWaterBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IWater extends ISpriteInstance {
+	instVars: IWaterVars;
+	behaviors: IWaterBehaviors;
 }
 
 interface ITXT_YOU_HAVE_TURNSVars extends VariableType {
@@ -737,6 +788,17 @@ interface Istar_home_ extends ISpriteInstance {
 	behaviors: Istar_home_Behaviors;
 }
 
+interface ISprite2Vars extends VariableType {
+	
+}
+interface ISprite2Behaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface ISprite2 extends ISpriteInstance {
+	instVars: ISprite2Vars;
+	behaviors: ISprite2Behaviors;
+}
+
 interface ISpriteVars extends VariableType {
 	
 }
@@ -792,28 +854,6 @@ interface Ispace_1 extends ISpriteInstance {
 	behaviors: Ispace_1Behaviors;
 }
 
-interface ISkillLevelHeaderVars extends VariableType {
-	
-}
-interface ISkillLevelHeaderBehaviors extends Record<string, IBehaviorInstance> {
-	
-}
-interface ISkillLevelHeader extends ITextInstance {
-	instVars: ISkillLevelHeaderVars;
-	behaviors: ISkillLevelHeaderBehaviors;
-}
-
-interface ISkillLevelBackgroundVars extends VariableType {
-	
-}
-interface ISkillLevelBackgroundBehaviors extends Record<string, IBehaviorInstance> {
-	
-}
-interface ISkillLevelBackground extends ISpriteInstance {
-	instVars: ISkillLevelBackgroundVars;
-	behaviors: ISkillLevelBackgroundBehaviors;
-}
-
 interface Ishow_effect2Vars extends VariableType {
 	
 }
@@ -859,17 +899,6 @@ interface IscrollBehaviors extends Record<string, IBehaviorInstance> {
 interface Iscroll extends ISpriteInstance {
 	instVars: IscrollVars;
 	behaviors: IscrollBehaviors;
-}
-
-interface IRewardVars extends VariableType {
-	
-}
-interface IRewardBehaviors extends Record<string, IBehaviorInstance> {
-	
-}
-interface IReward extends ITextInstance {
-	instVars: IRewardVars;
-	behaviors: IRewardBehaviors;
 }
 
 interface IPlayerVars extends VariableType {
@@ -1107,6 +1136,72 @@ interface Iico_trophy_1 extends ISpriteInstance {
 	behaviors: Iico_trophy_1Behaviors;
 }
 
+interface IHydraPlacesVars extends VariableType {
+	
+}
+interface IHydraPlacesBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IHydraPlaces extends ITextInstance {
+	instVars: IHydraPlacesVars;
+	behaviors: IHydraPlacesBehaviors;
+}
+
+interface IHydraManaVars extends VariableType {
+	
+}
+interface IHydraManaBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IHydraMana extends ITextInstance {
+	instVars: IHydraManaVars;
+	behaviors: IHydraManaBehaviors;
+}
+
+interface IHydraLevelVars extends VariableType {
+	
+}
+interface IHydraLevelBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IHydraLevel extends ITextInstance {
+	instVars: IHydraLevelVars;
+	behaviors: IHydraLevelBehaviors;
+}
+
+interface IHydraHPVars extends VariableType {
+	
+}
+interface IHydraHPBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IHydraHP extends ITextInstance {
+	instVars: IHydraHPVars;
+	behaviors: IHydraHPBehaviors;
+}
+
+interface IHydraHeader2Vars extends VariableType {
+	
+}
+interface IHydraHeader2Behaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IHydraHeader2 extends ITextInstance {
+	instVars: IHydraHeader2Vars;
+	behaviors: IHydraHeader2Behaviors;
+}
+
+interface IHydraHeaderVars extends VariableType {
+	
+}
+interface IHydraHeaderBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IHydraHeader extends ITextInstance {
+	instVars: IHydraHeaderVars;
+	behaviors: IHydraHeaderBehaviors;
+}
+
 interface Ihome_trofeusVars extends VariableType {
 	
 }
@@ -1174,6 +1269,17 @@ interface IGuide extends IWorldInstance {
 	behaviors: IGuideBehaviors;
 }
 
+interface IGateMaleVars extends VariableType {
+	
+}
+interface IGateMaleBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IGateMale extends ISpriteInstance {
+	instVars: IGateMaleVars;
+	behaviors: IGateMaleBehaviors;
+}
+
 interface Igamepad_middleVars extends VariableType {
 	
 }
@@ -1194,6 +1300,72 @@ interface IgamepadBehaviors extends Record<string, IBehaviorInstance> {
 interface Igamepad extends ISpriteInstance {
 	instVars: IgamepadVars;
 	behaviors: IgamepadBehaviors;
+}
+
+interface IGameModeWinRateVars extends VariableType {
+	
+}
+interface IGameModeWinRateBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IGameModeWinRate extends ITextInstance {
+	instVars: IGameModeWinRateVars;
+	behaviors: IGameModeWinRateBehaviors;
+}
+
+interface IGameModeRewardVars extends VariableType {
+	
+}
+interface IGameModeRewardBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IGameModeReward extends ITextInstance {
+	instVars: IGameModeRewardVars;
+	behaviors: IGameModeRewardBehaviors;
+}
+
+interface IGameModeIconVars extends VariableType {
+	
+}
+interface IGameModeIconBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IGameModeIcon extends ISpriteInstance {
+	instVars: IGameModeIconVars;
+	behaviors: IGameModeIconBehaviors;
+}
+
+interface IGameModeHeaderVars extends VariableType {
+	
+}
+interface IGameModeHeaderBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IGameModeHeader extends ITextInstance {
+	instVars: IGameModeHeaderVars;
+	behaviors: IGameModeHeaderBehaviors;
+}
+
+interface IGameModeExpirenceVars extends VariableType {
+	
+}
+interface IGameModeExpirenceBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IGameModeExpirence extends ITextInstance {
+	instVars: IGameModeExpirenceVars;
+	behaviors: IGameModeExpirenceBehaviors;
+}
+
+interface IGameModeBackgroundVars extends VariableType {
+	
+}
+interface IGameModeBackgroundBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IGameModeBackground extends ISpriteInstance {
+	instVars: IGameModeBackgroundVars;
+	behaviors: IGameModeBackgroundBehaviors;
 }
 
 interface IFunctionVars extends VariableType {
@@ -1221,6 +1393,28 @@ interface IFood extends ISpriteInstance {
 	behaviors: IFoodBehaviors;
 }
 
+interface IFirePlayerIconVars extends VariableType {
+	
+}
+interface IFirePlayerIconBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IFirePlayerIcon extends ISpriteInstance {
+	instVars: IFirePlayerIconVars;
+	behaviors: IFirePlayerIconBehaviors;
+}
+
+interface IFireVars extends VariableType {
+	
+}
+interface IFireBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IFire extends ISpriteInstance {
+	instVars: IFireVars;
+	behaviors: IFireBehaviors;
+}
+
 interface IFacebookVars extends VariableType {
 	
 }
@@ -1230,17 +1424,6 @@ interface IFacebookBehaviors extends Record<string, IBehaviorInstance> {
 interface IFacebook extends IWorldInstance {
 	instVars: IFacebookVars;
 	behaviors: IFacebookBehaviors;
-}
-
-interface IExpirenceVars extends VariableType {
-	
-}
-interface IExpirenceBehaviors extends Record<string, IBehaviorInstance> {
-	
-}
-interface IExpirence extends ITextInstance {
-	instVars: IExpirenceVars;
-	behaviors: IExpirenceBehaviors;
 }
 
 interface IEasyWinRateVars extends VariableType {
@@ -1539,6 +1722,28 @@ interface Ibar_level extends ISpriteInstance {
 	behaviors: Ibar_levelBehaviors;
 }
 
+interface IBackgroundManaVars extends VariableType {
+	
+}
+interface IBackgroundManaBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IBackgroundMana extends ISpriteInstance {
+	instVars: IBackgroundManaVars;
+	behaviors: IBackgroundManaBehaviors;
+}
+
+interface IBackgroundHPVars extends VariableType {
+	
+}
+interface IBackgroundHPBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IBackgroundHP extends ISpriteInstance {
+	instVars: IBackgroundHPVars;
+	behaviors: IBackgroundHPBehaviors;
+}
+
 interface IAudioVars extends VariableType {
 	
 }
@@ -1560,6 +1765,17 @@ interface IArrayWalletBehaviors extends Record<string, IBehaviorInstance> {
 interface IArrayWallet extends IInstance {
 	instVars: IArrayWalletVars;
 	behaviors: IArrayWalletBehaviors;
+}
+
+interface IArcaneHeaderVars extends VariableType {
+	
+}
+interface IArcaneHeaderBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IArcaneHeader extends ITextInstance {
+	instVars: IArcaneHeaderVars;
+	behaviors: IArcaneHeaderBehaviors;
 }
 
 interface IAJAXVars extends VariableType {
