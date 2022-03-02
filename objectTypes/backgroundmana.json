@@ -1,0 +1,57 @@
+{
+	"name": "BackgroundMana",
+	"plugin-id": "Sprite",
+	"sid": 172719610424529,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 91,
+						"height": 21,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8058841,
+						"collisionPoly": {
+							"points": [
+								0.01818181818181818,
+								0.09523809523809523,
+								0.5,
+								0.047619047619047616,
+								0.9727272727272728,
+								0.09523809523809523,
+								0.990909090909091,
+								0.5,
+								0.9818181818181818,
+								0.9047619047619048,
+								0.5,
+								0.9523809523809523,
+								0.01818181818181818,
+								0.8571428571428571,
+								0.00909090909090909,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 958151254612791,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
