@@ -36,6 +36,16 @@
 			"sid": 511194546827046
 		},
 		{
+			"eventType": "variable",
+			"name": "PlayerName",
+			"type": "string",
+			"initialValue": "Me",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 155625864246481
+		},
+		{
 			"eventType": "comment",
 			"text": ""
 		},
@@ -523,7 +533,7 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 984628469272539,
+							"sid": 280923428565839,
 							"parameters": {
 								"variable": "Style_Body_Player",
 								"value": "choose(0,1,2,3,4)"
@@ -536,6 +546,14 @@
 							"parameters": {
 								"variable": "PowerPlayer",
 								"value": "0"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Name_Player",
+							"sid": 431695491553032,
+							"parameters": {
+								"text": "PlayerName"
 							}
 						}
 					],
@@ -4283,7 +4301,7 @@
 						{
 							"id": "spawn-another-object",
 							"objectClass": "Player",
-							"sid": 736001812994826,
+							"sid": 509451048368727,
 							"parameters": {
 								"object": "Body_Player",
 								"layer": "0",
@@ -4378,6 +4396,16 @@
 									"sid": 763344135141383,
 									"parameters": {
 										"frame-number": "0"
+									}
+								},
+								{
+									"id": "pin-to-object-distance",
+									"objectClass": "Name_Player",
+									"sid": 641234412503551,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "Player",
+										"mode": "rope-style"
 									}
 								}
 							],
