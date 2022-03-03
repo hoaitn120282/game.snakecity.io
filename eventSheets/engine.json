@@ -553,9 +553,9 @@
 				{
 					"id": "connect",
 					"objectClass": "Multiplayer",
-					"sid": 120696604593502,
+					"sid": 917276421083812,
 					"parameters": {
-						"server": "\"wss://multiplayer.scirra.com\""
+						"server": "\"https://socket.snakecity.io\""
 					}
 				}
 			],
