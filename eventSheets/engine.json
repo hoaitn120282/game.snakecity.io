@@ -319,100 +319,10 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 660747662653093,
-					"parameters": {
-						"variable": "Size_Player",
-						"value": "0.6"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 386401785815948,
-					"parameters": {
-						"variable": "Speedy_Player",
-						"value": "\"N\""
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 236836318683864,
-					"parameters": {
-						"variable": "Style_Body_Player",
-						"value": "1"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 534135033770346,
-					"parameters": {
-						"variable": "Size_Enemy",
-						"value": "0.6"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 993644343134200,
-					"parameters": {
-						"variable": "Style_Body_Enemy",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 626590737333592,
-					"parameters": {
-						"variable": "PowerPlayer",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
 					"sid": 447974339419620,
 					"parameters": {
 						"variable": "PowerLevel",
 						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 704971652370239,
-					"parameters": {
-						"variable": "Size_Enemy_1",
-						"value": "0.6"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 426394242484344,
-					"parameters": {
-						"variable": "Size_Enemy_2",
-						"value": "0.6"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 304211079795616,
-					"parameters": {
-						"variable": "Size_Enemy_3",
-						"value": "0.6"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 727911491013414,
-					"parameters": {
-						"variable": "Size_Enemy_4",
-						"value": "0.6"
 					}
 				},
 				{
@@ -497,6 +407,83 @@
 				}
 			],
 			"sid": 635549661037174
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Initial Enemy",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 174108132131594
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 591528651519156,
+							"parameters": {
+								"variable": "Size_Enemy",
+								"value": "0.6"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 496041673668896,
+							"parameters": {
+								"variable": "Style_Body_Enemy",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 672227947381704,
+							"parameters": {
+								"variable": "Size_Enemy_1",
+								"value": "0.6"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 330862743902983,
+							"parameters": {
+								"variable": "Size_Enemy_2",
+								"value": "0.6"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 375357302433815,
+							"parameters": {
+								"variable": "Size_Enemy_3",
+								"value": "0.6"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 458174099030079,
+							"parameters": {
+								"variable": "Size_Enemy_4",
+								"value": "0.6"
+							}
+						}
+					],
+					"sid": 512204621052382
+				}
+			],
+			"sid": 781264433955886
 		},
 		{
 			"eventType": "group",
@@ -642,6 +629,71 @@
 				}
 			],
 			"sid": 961543162501308
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Initial Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 300644348423250
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 885193193919322,
+							"parameters": {
+								"variable": "Size_Player",
+								"value": "0.6"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 906081166979381,
+							"parameters": {
+								"variable": "Speedy_Player",
+								"value": "\"N\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 424990049854390,
+							"parameters": {
+								"variable": "Style_Body_Player",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 610227480669507,
+							"parameters": {
+								"variable": "PowerPlayer",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 800095322927327
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 763270459622240
+				}
+			],
+			"sid": 409767841521722
 		},
 		{
 			"eventType": "block",
@@ -822,6 +874,15 @@
 					"sid": 117255945268470,
 					"parameters": {
 						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 963493970186502,
+					"parameters": {
+						"instance-variable": "Style",
+						"value": "0"
 					}
 				}
 			],

@@ -266,7 +266,8 @@
 					},
 					"uid": 1,
 					"instanceVariables": {
-						"Power": 0
+						"Power": 0,
+						"Style": 0
 					},
 					"behaviors": {
 						"Bullet": {

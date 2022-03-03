@@ -270,7 +270,10 @@
 			{
 				"items": [
 					"Body_Player",
-					"Player"
+					"Player",
+					"Player_01",
+					"Body_Player_01",
+					"Sprite2"
 				],
 				"subfolders": [],
 				"name": "Players"
