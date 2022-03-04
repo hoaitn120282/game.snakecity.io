@@ -499,6 +499,8 @@
 					"parameters": {
 						"visibility": "visible"
 					}
+<<<<<<< HEAD
+=======
 				},
 				{
 					"type": "comment",
@@ -523,6 +525,7 @@
 					"parameters": {
 						"server": "\"https://socket.snakecity.io\""
 					}
+>>>>>>> 2847f3010b1dde3afc62989ce44586e1d3be97cf
 				}
 			],
 			"sid": 635549661037174
