@@ -3072,24 +3072,6 @@
 									],
 									"actions": [
 										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 623797462714741,
-											"parameters": {
-												"variable": "Size_Player",
-												"value": "0"
-											}
-										},
-										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 651735813313075,
-											"parameters": {
-												"variable": "PowerLevel",
-												"value": "0"
-											}
-										},
-										{
 											"id": "spawn-another-object",
 											"objectClass": "Food",
 											"sid": 322855623720700,
@@ -3112,57 +3094,18 @@
 											}
 										},
 										{
-											"id": "set-angle",
-											"objectClass": "TXT_Score_Show",
-											"sid": 762320371814512,
-											"parameters": {
-												"angle": "0"
-											}
-										},
-										{
-											"id": "set-text",
-											"objectClass": "TXT_Score_Show",
-											"sid": 448777492644066,
-											"parameters": {
-												"text": "\"0\""
-											}
-										},
-										{
 											"id": "destroy",
 											"objectClass": "Food",
 											"sid": 485111130783175
 										},
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Player",
-											"sid": 809017747961457,
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 498359439992246,
 											"parameters": {
-												"object": "Food",
-												"layer": "0",
-												"image-point": "0",
-												"create-hierarchy": false
+												"variable": "rewardNumber",
+												"value": "rewardNumber / 2"
 											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Player",
-											"sid": 734641067634041
-										},
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Body_Player",
-											"sid": 209175533990481,
-											"parameters": {
-												"object": "Food",
-												"layer": "0",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Body_Player",
-											"sid": 536445958609421
 										}
 									],
 									"sid": 958158868724843
