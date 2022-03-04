@@ -39,7 +39,7 @@
 			"eventType": "variable",
 			"name": "PlayerName",
 			"type": "string",
-			"initialValue": "Me",
+			"initialValue": "You",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -533,10 +533,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 280923428565839,
+							"sid": 465265036949089,
 							"parameters": {
 								"variable": "Style_Body_Player",
-								"value": "choose(0,1,2,3,4)"
+								"value": "choose(0,1,2,3,4,5)"
 							}
 						},
 						{
@@ -4656,6 +4656,67 @@
 							"sid": 131237515825500
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 998100638789621,
+							"parameters": {
+								"variable": "Style_Body_Player",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Player",
+							"sid": 628871903619355,
+							"parameters": {
+								"frame-number": "5"
+							}
+						}
+					],
+					"sid": 541347179224486,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Body_Player",
+									"sid": 870666345217221,
+									"parameters": {
+										"object": "Player"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Player",
+									"sid": 919809138972687,
+									"parameters": {
+										"comparison": 0,
+										"number": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Body_Player",
+									"sid": 278174795025990,
+									"parameters": {
+										"frame-number": "5"
+									}
+								}
+							],
+							"sid": 682735571552901
+						}
+					]
 				}
 			],
 			"sid": 1394412586242104
@@ -7215,6 +7276,11 @@
 									"id": "destroy",
 									"objectClass": "Body_Player",
 									"sid": 449534210100687
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Name_Player",
+									"sid": 833435817205538
 								}
 							],
 							"sid": 673022879712144
