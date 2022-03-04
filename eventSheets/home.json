@@ -76,6 +76,40 @@
 			"sid": 142672469327137
 		},
 		{
+			"eventType": "comment",
+			"text": "It is good practice to have global constants for the game name, instance name and room name if they do not change. This means there is only one place we need to update our project if we wanted to change any of them."
+		},
+		{
+			"eventType": "variable",
+			"name": "Game_Name2",
+			"type": "string",
+			"initialValue": "snakecity.pvp",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 274080758819413
+		},
+		{
+			"eventType": "variable",
+			"name": "Instance_Name2",
+			"type": "string",
+			"initialValue": "default",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 638381634651754
+		},
+		{
+			"eventType": "variable",
+			"name": "Room_Name2",
+			"type": "string",
+			"initialValue": "",
+			"comment": "main",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 890779751986679
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -177,6 +211,30 @@
 					"parameters": {
 						"tag": "\"GetTurnLimitHome\"",
 						"url": "apiUrlHome&\"turns/\"&walletIDHome"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Multi Players Starting"
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ActivityLog",
+					"sid": 213999523020788,
+					"parameters": {
+						"text": "\"Connecting to Server\""
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Connect to server where is socket already setup and listening for each players"
+				},
+				{
+					"id": "connect",
+					"objectClass": "Multiplayer",
+					"sid": 816458457405208,
+					"parameters": {
+						"server": "\"https://socket.snakecity.io\""
 					}
 				}
 			],
@@ -309,6 +367,502 @@
 					"sid": 805173335433891
 				}
 			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Signalling Process2",
+			"description": "Multi Players Flow",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "message",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 624002175245522
+				},
+				{
+					"functionName": "Addlog2",
+					"functionDescription": "Write activity to logs",
+					"functionCategory": "Logs",
+					"functionReturnType": "any",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "ActivityLog",
+							"sid": 309106859139249,
+							"parameters": {
+								"text": "Self.Text & newline"
+							}
+						},
+						{
+							"id": "scroll-to-bottom",
+							"objectClass": "ActivityLog",
+							"sid": 359654949788566
+						}
+					],
+					"sid": 665395973452762
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-connected",
+							"objectClass": "Multiplayer",
+							"sid": 451130865864051
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 605589605292945,
+							"parameters": {
+								"name": "\"AddLog\"",
+								"parameter-n": [
+									"message"
+								]
+							}
+						},
+						{
+							"id": "log-in",
+							"objectClass": "Multiplayer",
+							"sid": 167226286405497,
+							"parameters": {
+								"alias": "walletID"
+							}
+						}
+					],
+					"sid": 113087416477552
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-logged-in",
+							"objectClass": "Multiplayer",
+							"sid": 807379803918374
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 275539483467249,
+							"parameters": {
+								"name": "\"AddLog\"",
+								"parameter-n": [
+									"message"
+								]
+							}
+						}
+					],
+					"sid": 751876329517288
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-joined-room",
+							"objectClass": "Multiplayer",
+							"sid": 279023825999529
+						}
+					],
+					"actions": [
+						{
+							"id": "set-read-only",
+							"objectClass": "ChatText",
+							"sid": 519243352433633,
+							"parameters": {
+								"mode": "not-read-only"
+							}
+						},
+						{
+							"id": "set-focused",
+							"objectClass": "ChatText",
+							"sid": 876311442909503
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "SendBtn",
+							"sid": 326396992648710,
+							"parameters": {
+								"mode": "enabled"
+							}
+						}
+					],
+					"sid": 601653268019759,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-host",
+									"objectClass": "Multiplayer",
+									"sid": 803580873343870
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 951361464352793,
+									"parameters": {
+										"group-name": "\"Host\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "call-function",
+									"objectClass": "Function",
+									"sid": 158681720798964,
+									"parameters": {
+										"name": "\"AddLog\"",
+										"parameter-n": [
+											"message"
+										]
+									}
+								},
+								{
+									"id": "add-item",
+									"objectClass": "PeerList",
+									"sid": 665373890209840,
+									"parameters": {
+										"text": "Multiplayer.MyAlias"
+									}
+								}
+							],
+							"sid": 782170129368162
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 584314715351443
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 504563550217811,
+									"parameters": {
+										"group-name": "\"Peer\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "call-function",
+									"objectClass": "Function",
+									"sid": 900228036352504,
+									"parameters": {
+										"name": "\"AddLog\"",
+										"parameter-n": [
+											"message"
+										]
+									}
+								},
+								{
+									"id": "add-item",
+									"objectClass": "PeerList",
+									"sid": 541286534656599,
+									"parameters": {
+										"text": "Multiplayer.MyAlias"
+									}
+								}
+							],
+							"sid": 707756439894488
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-left-room",
+							"objectClass": "Multiplayer",
+							"sid": 707044375939157
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 778620130946016,
+							"parameters": {
+								"name": "\"AddLog\"",
+								"parameter-n": [
+									"message"
+								]
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "ChatText",
+							"sid": 161568304309155,
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "SendBtn",
+							"sid": 793537873029126,
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "clear",
+							"objectClass": "PeerList",
+							"sid": 257249226511006
+						}
+					],
+					"sid": 159196498414723
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-disconnected",
+							"objectClass": "Multiplayer",
+							"sid": 478346964974710
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 894041041169751,
+							"parameters": {
+								"name": "\"AddLog\"",
+								"parameter-n": [
+									"message"
+								]
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "ChatText",
+							"sid": 641103261375662,
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "SendBtn",
+							"sid": 232357810301453,
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "clear",
+							"objectClass": "PeerList",
+							"sid": 901263358047788
+						}
+					],
+					"sid": 670292503142378
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-error",
+							"objectClass": "Multiplayer",
+							"sid": 573533813666121
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 714293479735532,
+							"parameters": {
+								"name": "\"AddLog\"",
+								"parameter-n": [
+									"message"
+								]
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "ChatText",
+							"sid": 333045508901756,
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "SendBtn",
+							"sid": 162067107920164,
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "clear",
+							"objectClass": "PeerList",
+							"sid": 551143786235230
+						}
+					],
+					"sid": 711599287045085
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-peer-connected",
+							"objectClass": "Multiplayer",
+							"sid": 324107679712356
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 424235357468915,
+							"parameters": {
+								"name": "\"AddLog\"",
+								"parameter-n": [
+									"message"
+								]
+							}
+						},
+						{
+							"id": "add-item",
+							"objectClass": "PeerList",
+							"sid": 124652269736948,
+							"parameters": {
+								"text": "Multiplayer.MyAlias"
+							}
+						}
+					],
+					"sid": 579023084389159
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-peer-disconnected",
+							"objectClass": "Multiplayer",
+							"sid": 563484025086980
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 725674892158506,
+							"parameters": {
+								"name": "\"AddLog\"",
+								"parameter-n": [
+									"message"
+								]
+							}
+						}
+					],
+					"sid": 514241735339748,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 316564651407173,
+									"parameters": {
+										"count": "PeerList.ItemCount"
+									}
+								},
+								{
+									"id": "compare-item-text-at",
+									"objectClass": "PeerList",
+									"sid": 226547432755869,
+									"parameters": {
+										"index": "loopindex",
+										"text-to-compare": "Multiplayer.PeerAlias",
+										"case-sensitivity": "case-sensitive"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "To remove the right name we check every item in the list, and remove the item index where the item text matches the name of peer who left."
+								},
+								{
+									"id": "remove",
+									"objectClass": "PeerList",
+									"sid": 953210628611439,
+									"parameters": {
+										"index": "loopindex"
+									}
+								}
+							],
+							"sid": 868727018324781
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-kicked",
+							"objectClass": "Multiplayer",
+							"sid": 258773459363621
+						}
+					],
+					"actions": [
+						{
+							"id": "call-function",
+							"objectClass": "Function",
+							"sid": 199814961858733,
+							"parameters": {
+								"name": "\"AddLog\"",
+								"parameter-n": [
+									"message"
+								]
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "ChatText",
+							"sid": 686154286611809,
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "SendBtn",
+							"sid": 688229427724808,
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "clear",
+							"objectClass": "PeerList",
+							"sid": 424165114936136
+						}
+					],
+					"sid": 396987854299182
+				}
+			],
+			"sid": 556714869112452
 		},
 		{
 			"eventType": "group",
