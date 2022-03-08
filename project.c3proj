@@ -88,6 +88,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -114,14 +122,6 @@
 			"type": "plugin",
 			"id": "Particles",
 			"name": "Particles",
-			"author": "Scirra",
-			"version": "r285.3",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -249,9 +249,7 @@
 	],
 	"uniqueId": "1kbnpl3ps90d4",
 	"objectTypes": {
-		"items": [
-			"JoinBTN"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -264,7 +262,9 @@
 					"LocalStorage",
 					"Mouse",
 					"Touch",
-					"ArrayWallet"
+					"ArrayWallet",
+					"LogMessage",
+					"TextLog"
 				],
 				"subfolders": [],
 				"name": "Plugins"
@@ -377,7 +377,9 @@
 					"TXT_TURN_NUMBER",
 					"TXT_YOU_HAVE_NO_TURN",
 					"TXT_YOU_HAVE_TURNS",
-					"TXT_COUNT_DOWN"
+					"TXT_COUNT_DOWN",
+					"HostIndicator",
+					"NetStats"
 				],
 				"subfolders": [],
 				"name": "Textures"
@@ -705,7 +707,7 @@
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "progress-logo",
+		"loaderStyle": "splash",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "file"

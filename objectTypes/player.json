@@ -9,6 +9,48 @@
 			"type": "number",
 			"desc": "",
 			"sid": 916372161967696
+		},
+		{
+			"name": "lookatx",
+			"type": "number",
+			"desc": "",
+			"sid": 217983069384660
+		},
+		{
+			"name": "lookaty",
+			"type": "number",
+			"desc": "",
+			"sid": 392470465074642
+		},
+		{
+			"name": "inputs",
+			"type": "number",
+			"desc": "",
+			"sid": 801393972917428
+		},
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"sid": 716946549173515
+		},
+		{
+			"name": "kills",
+			"type": "number",
+			"desc": "",
+			"sid": 493231933247980
+		},
+		{
+			"name": "deaths",
+			"type": "number",
+			"desc": "",
+			"sid": 540840277809932
+		},
+		{
+			"name": "peerid",
+			"type": "string",
+			"desc": "",
+			"sid": 941283847535071
 		}
 	],
 	"behaviorTypes": [

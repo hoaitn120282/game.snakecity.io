@@ -266,7 +266,14 @@
 					},
 					"uid": 1,
 					"instanceVariables": {
-						"Power": 0
+						"Power": 0,
+						"lookatx": 0,
+						"lookaty": 0,
+						"inputs": 0,
+						"health": 0,
+						"kills": 0,
+						"deaths": 0,
+						"peerid": ""
 					},
 					"behaviors": {
 						"Bullet": {
@@ -3537,6 +3544,16 @@
 			"instanceVariables": {
 				"turns": ""
 			}
+		},
+		{
+			"type": "LogMessage",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 145,
+			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],
