@@ -1,7 +1,7 @@
 {
-	"name": "TextLog",
+	"name": "ScoreDisplay",
 	"plugin-id": "Text",
-	"sid": 837226411232343,
+	"sid": 427126366388448,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],

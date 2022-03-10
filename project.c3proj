@@ -88,14 +88,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
-			"author": "Scirra",
-			"version": "r285.3",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -128,8 +120,8 @@
 		},
 		{
 			"type": "plugin",
-			"id": "TextBox",
-			"name": "Text input",
+			"id": "Text",
+			"name": "Text",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -138,22 +130,6 @@
 			"type": "plugin",
 			"id": "Multiplayer",
 			"name": "Multiplayer",
-			"author": "Scirra",
-			"version": "r285.3",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Button",
-			"name": "Button",
-			"author": "Scirra",
-			"version": "r285.3",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "List",
-			"name": "List",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -262,9 +238,7 @@
 					"LocalStorage",
 					"Mouse",
 					"Touch",
-					"ArrayWallet",
-					"LogMessage",
-					"TextLog"
+					"ArrayWallet"
 				],
 				"subfolders": [],
 				"name": "Plugins"
@@ -377,9 +351,7 @@
 					"TXT_TURN_NUMBER",
 					"TXT_YOU_HAVE_NO_TURN",
 					"TXT_YOU_HAVE_TURNS",
-					"TXT_COUNT_DOWN",
-					"HostIndicator",
-					"NetStats"
+					"TXT_COUNT_DOWN"
 				],
 				"subfolders": [],
 				"name": "Textures"
@@ -439,11 +411,11 @@
 			},
 			{
 				"items": [
-					"ActivityLog",
-					"ChatText",
 					"Multiplayer",
-					"SendBtn",
-					"PeerList"
+					"LogMessages",
+					"LogText",
+					"ScoreDisplay",
+					"NetStats"
 				],
 				"subfolders": [],
 				"name": "MultiPlayers"

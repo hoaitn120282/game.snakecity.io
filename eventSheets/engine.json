@@ -303,33 +303,53 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "Game_Name",
+			"name": "GAME_NAME",
 			"type": "string",
-			"initialValue": "snakecity.pvp",
+			"initialValue": "scirra-pong",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 923843029759094
+			"sid": 459740118036994
 		},
 		{
 			"eventType": "variable",
-			"name": "Instance_Name",
+			"name": "INSTANCE_NAME",
 			"type": "string",
 			"initialValue": "default",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 212790315448298
+			"sid": 904153598554912
 		},
 		{
 			"eventType": "variable",
-			"name": "Room_Name",
+			"name": "ROOM_NAME",
 			"type": "string",
-			"initialValue": "",
-			"comment": "main",
+			"initialValue": "game",
+			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 726835262059746
+			"sid": 770635183384473
+		},
+		{
+			"eventType": "variable",
+			"name": "MyUsername",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 546235491581190
+		},
+		{
+			"eventType": "variable",
+			"name": "GameState",
+			"type": "string",
+			"initialValue": "waiting",
+			"comment": "\"waiting\", \"getready\", \"go\" or \"started\"",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 208285555440823
 		},
 		{
 			"eventType": "block",
@@ -540,669 +560,829 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Message Logs",
-			"description": "Functions to manage updating the LogText object as messages are added.",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"functionName": "MessageLog",
-					"functionDescription": "Automatically converted from 'AddLog'",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "message",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 992451754819109
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "push",
-							"objectClass": "LogMessage",
-							"sid": 136182762448928,
-							"parameters": {
-								"where": "back",
-								"value": "message",
-								"axis": "x"
-							}
-						}
-					],
-					"sid": 708862429945626
-				},
-				{
-					"eventType": "comment",
-					"text": "If we are over 20 messages, delete the first (oldest) message."
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-size",
-							"objectClass": "LogMessage",
-							"sid": 635242758861213,
-							"parameters": {
-								"axis": "x",
-								"comparison": 4,
-								"value": "20"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "pop",
-							"objectClass": "LogMessage",
-							"sid": 725757912040593,
-							"parameters": {
-								"where": "front",
-								"axis": "x"
-							}
-						}
-					],
-					"sid": 430878518989154
-				},
-				{
-					"eventType": "comment",
-					"text": "Reset the log text to empty - we will rebuild it completely from the array."
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "TextLog",
-							"sid": 516312145063484,
-							"parameters": {
-								"text": "\"\""
-							}
-						}
-					],
-					"sid": 621818000544290
-				},
-				{
-					"eventType": "comment",
-					"text": "For each element will repeat for each chat log we've added in order, so we can append the message with a line break."
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each-element",
-							"objectClass": "LogMessage",
-							"sid": 962657930352402,
-							"parameters": {
-								"axes": "x"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "TextLog",
-							"sid": 167105693167376,
-							"parameters": {
-								"text": "LogMessage.CurValue & newline"
-							}
-						}
-					],
-					"sid": 952415375604358
-				},
-				{
-					"eventType": "comment",
-					"text": "Adding a chat message just calls 'AddLog' with the alias and message, e.g. <Joe> Hello world!"
-				},
-				{
-					"functionName": "AddChat",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "alias",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 334712999062886
-						},
-						{
-							"name": "message",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 427767141298101
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 185485416420585
-				}
-			],
-			"sid": 521087642829140
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Signalling Process",
-			"description": "Manages connecting to the signalling server and joining the room.",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "On start of layout, connect to the signalling server. We also set up which client input values the peers will be using, and sync the Peer object with its position and additional instance variables for the look position, current inputs and player stats."
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 487473044095103
-						}
-					],
-					"actions": [
-						{
-							"id": "add-client-input-value",
-							"objectClass": "Multiplayer",
-							"sid": 263273555866973,
-							"parameters": {
-								"tag": "\"lookx\"",
-								"precision": "low-int16-2-bytes",
-								"interpolation": "linear"
-							}
-						},
-						{
-							"id": "add-client-input-value",
-							"objectClass": "Multiplayer",
-							"sid": 900519010967776,
-							"parameters": {
-								"tag": "\"looky\"",
-								"precision": "low-int16-2-bytes",
-								"interpolation": "none"
-							}
-						},
-						{
-							"id": "add-client-input-value",
-							"objectClass": "Multiplayer",
-							"sid": 916967630450214,
-							"parameters": {
-								"tag": "\"inputs\"",
-								"precision": "very-low-uint8-1-byte",
-								"interpolation": "none"
-							}
-						},
-						{
-							"id": "sync-object",
-							"objectClass": "Multiplayer",
-							"sid": 727696820079101,
-							"parameters": {
-								"object": "Player",
-								"data": "position-only",
-								"precision": "low-int16-2-bytes",
-								"bandwidth": "normal-bandwidth-unpredictable"
-							}
-						},
-						{
-							"id": "sync-instance-variable",
-							"objectClass": "Multiplayer",
-							"sid": 149473914240524,
-							"parameters": {
-								"object": "Player",
-								"instance-variable": {
-									"name": "lookatx",
-									"objectClass": "Player"
-								},
-								"precision": "low-int16-2-bytes",
-								"interpolation": "linear",
-								"client-value-tag": "\"lookx\""
-							}
-						},
-						{
-							"id": "sync-instance-variable",
-							"objectClass": "Multiplayer",
-							"sid": 325994400767907,
-							"parameters": {
-								"object": "Player",
-								"instance-variable": {
-									"name": "lookaty",
-									"objectClass": "Player"
-								},
-								"precision": "low-int16-2-bytes",
-								"interpolation": "linear",
-								"client-value-tag": "\"looky\""
-							}
-						},
-						{
-							"id": "sync-instance-variable",
-							"objectClass": "Multiplayer",
-							"sid": 252574896826671,
-							"parameters": {
-								"object": "Player",
-								"instance-variable": {
-									"name": "inputs",
-									"objectClass": "Player"
-								},
-								"precision": "very-low-uint8-1-byte",
-								"interpolation": "none",
-								"client-value-tag": "\"inputs\""
-							}
-						},
-						{
-							"id": "sync-instance-variable",
-							"objectClass": "Multiplayer",
-							"sid": 695870886770324,
-							"parameters": {
-								"object": "Player",
-								"instance-variable": {
-									"name": "health",
-									"objectClass": "Player"
-								},
-								"precision": "very-low-uint8-1-byte",
-								"interpolation": "none",
-								"client-value-tag": "\"health\""
-							}
-						},
-						{
-							"id": "sync-instance-variable",
-							"objectClass": "Multiplayer",
-							"sid": 350903570497694,
-							"parameters": {
-								"object": "Player",
-								"instance-variable": {
-									"name": "kills",
-									"objectClass": "Player"
-								},
-								"precision": "low-int16-2-bytes",
-								"interpolation": "none",
-								"client-value-tag": "\"kills\""
-							}
-						},
-						{
-							"id": "sync-instance-variable",
-							"objectClass": "Multiplayer",
-							"sid": 526507683257496,
-							"parameters": {
-								"object": "Player",
-								"instance-variable": {
-									"name": "deaths",
-									"objectClass": "Player"
-								},
-								"precision": "low-int16-2-bytes",
-								"interpolation": "none",
-								"client-value-tag": "\"deaths\""
-							}
-						},
-						{
-							"id": "connect",
-							"objectClass": "Multiplayer",
-							"sid": 819543771606035,
-							"parameters": {
-								"server": "\"wss://multiplayer.scirra.com\""
-							}
-						}
-					],
-					"sid": 339999684087188
-				},
-				{
-					"eventType": "comment",
-					"text": "When connected, request to log in."
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-connected",
-							"objectClass": "Multiplayer",
-							"sid": 993680984697877
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "MessageLog",
-							"sid": 932257457437180,
-							"parameters": [
-								"\"Joined room as host\""
-							]
-						},
-						{
-							"id": "log-in",
-							"objectClass": "Multiplayer",
-							"sid": 556614846154380,
-							"parameters": {
-								"alias": "walletID"
-							}
-						}
-					],
-					"sid": 466325807475156
-				},
-				{
-					"eventType": "comment",
-					"text": "When logged in, request to join the room."
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-logged-in",
-							"objectClass": "Multiplayer",
-							"sid": 739009206538958
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "MessageLog",
-							"sid": 986189891278769,
-							"parameters": [
-								"\"Logged in with alias: \" & Multiplayer.MyAlias& \" (\" & Multiplayer.MyID& \")\" & newline & \"Joining room...\""
-							]
-						},
-						{
-							"id": "join-room",
-							"objectClass": "Multiplayer",
-							"sid": 338128601165810,
-							"parameters": {
-								"game": "Game_Name",
-								"instance": "Instance_Name",
-								"room": "Room_Name",
-								"max-peers": "0"
-							}
-						}
-					],
-					"sid": 987837011646198
-				},
-				{
-					"eventType": "comment",
-					"text": "We joined the room: activate either the Host or the Peer group. The host also has text object appear to indicate they are the host."
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-joined-room",
-							"objectClass": "Multiplayer",
-							"sid": 926741346637358
-						}
-					],
-					"actions": [],
-					"sid": 182781092232385,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "As the host, we also adopt the existing Peer object in the layout as our own player. We must set its peer ID to our own ID and tell the Multiplayer object it is associated with ourselves."
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-host",
-									"objectClass": "Multiplayer",
-									"sid": 377100407437917
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "MessageLog",
-									"sid": 499240991042255,
-									"parameters": [
-										"\"Joined room as host\""
-									]
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 280043411283437,
-									"parameters": {
-										"group-name": "\"Host\"",
-										"state": "activated"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "HostIndicator",
-									"sid": 751795036771743,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 113852557254331,
-									"parameters": {
-										"instance-variable": "peerid",
-										"value": "Multiplayer.MyID"
-									}
-								},
-								{
-									"id": "associate-object-with-peer",
-									"objectClass": "Multiplayer",
-									"sid": 795901791069871,
-									"parameters": {
-										"object": "Player",
-										"peer-id": "Multiplayer.MyID"
-									}
-								}
-							],
-							"sid": 422740939874793
-						},
-						{
-							"eventType": "comment",
-							"text": "When not the host, the Peer object already in the layout is destroyed. 'Sync object' will create the peer for ourselves, possibly in a different location, and we'll associate it then. (See the 'Peer' group's 'On object created')"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 245226639379360
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "MessageLog",
-									"sid": 231578568481223,
-									"parameters": [
-										"\"Joined room as peer\""
-									]
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 737729377086117,
-									"parameters": {
-										"group-name": "\"Peer\"",
-										"state": "activated"
-									}
-								},
-								{
-									"callFunction": "MessageLog",
-									"sid": 297799601279652,
-									"parameters": [
-										"\"Attempting to establish connection to host...\""
-									]
-								},
-								{
-									"id": "destroy",
-									"objectClass": "Player",
-									"sid": 877601733537003
-								}
-							],
-							"sid": 869201235473245
-						}
-					]
-				},
-				{
-					"eventType": "comment",
-					"text": "If we leave, get disconnected or encounter an error, add it to the log."
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-disconnected",
-							"objectClass": "Multiplayer",
-							"sid": 565045208146062
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "MessageLog",
-							"sid": 220038522148987,
-							"parameters": [
-								"\"Signalling disconnected\""
-							]
-						}
-					],
-					"sid": 697443296662710
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-error",
-							"objectClass": "Multiplayer",
-							"sid": 584664674903537
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "MessageLog",
-							"sid": 708383238864962,
-							"parameters": [
-								"\"Signalling error: \" & Multiplayer.ErrorMessage"
-							]
-						}
-					],
-					"sid": 481436530969054
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-left-room",
-							"objectClass": "Multiplayer",
-							"sid": 729216051573098
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "MessageLog",
-							"sid": 184911062472534,
-							"parameters": [
-								"\"Signalling: left room\""
-							]
-						}
-					],
-					"sid": 965593904641936
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-kicked",
-							"objectClass": "Multiplayer",
-							"sid": 222317638725889
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "MessageLog",
-							"sid": 598276298450689,
-							"parameters": [
-								"\"Kicked (either could not connect to host or host quit)\""
-							]
-						}
-					],
-					"sid": 179588506260695
-				},
-				{
-					"eventType": "comment",
-					"text": "Update the NetStats text object in the bottom left with details like the peer count, inbound and outbound bandwidth, host ping and PDV."
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 802204221661282
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "NetStats",
-							"sid": 837693519824973,
-							"parameters": {
-								"text": "Multiplayer.PeerCount & \" peers connected\" & newline & Multiplayer.StatInboundCount & \" in (\" & (round(Multiplayer.StatInboundBandwidth/100)/10) & \" k) / sec\" & newline & Multiplayer.StatOutboundCount & \" out (\" & (round(Multiplayer.StatOutboundBandwidth/100)/10) & \" k) / sec\" & newline & \"Host ping \" & round(Multiplayer.PeerLatency(Multiplayer.HostID)) & \", PDV \" & round(Multiplayer.PeerPDV(Multiplayer.HostID))"
-							}
-						}
-					],
-					"sid": 399975000001188
-				}
-			],
-			"sid": 176944357896512
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Game",
+			"title": "Multiplayers",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "Peer",
-					"description": "",
-					"isActiveOnStart": false,
+					"title": "Message log",
+					"description": "Functions to manage updating the LogText object as messages are added.",
+					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "When a Peer is created from 'Sync object', Multiplayer.PeerID has the ID of the peer that the object represents. This must be stored in an instance variable so we can later identify which peer the object represents."
+							"text": "This is similar to the chat example, but instead of keeping a log in a text box, we keep it in an ordinary Text object so we can see things behind it. However the text object cannot scroll its text, so instead we keep the last 20 messages in an array, and update the text object from that. This is a simple way to have the messages scroll up as more messages are added.\r\n\r\nFirst when adding a log we add the line to the end of an array."
+						},
+						{
+							"functionName": "AddLog",
+							"functionDescription": "Automatically converted from 'AddLog'",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "message",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 438743475605501
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "push",
+									"objectClass": "LogMessages",
+									"sid": 788712708038829,
+									"parameters": {
+										"where": "back",
+										"value": "message",
+										"axis": "x"
+									}
+								}
+							],
+							"sid": 675563463524936,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "If we are over 20 messages, delete the first (oldest) message."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-size",
+											"objectClass": "LogMessages",
+											"sid": 600093883204794,
+											"parameters": {
+												"axis": "x",
+												"comparison": 4,
+												"value": "20"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "pop",
+											"objectClass": "LogMessages",
+											"sid": 426107381754434,
+											"parameters": {
+												"where": "front",
+												"axis": "x"
+											}
+										}
+									],
+									"sid": 697390782442932
+								},
+								{
+									"eventType": "comment",
+									"text": "Reset the log text to empty - we will rebuild it completely from the array."
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "LogText",
+											"sid": 650378251481247,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 312486253203355
+								},
+								{
+									"eventType": "comment",
+									"text": "For each element will repeat for each chat log we've added in order, so we can append the message with a line break."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each-element",
+											"objectClass": "LogMessages",
+											"sid": 995406918210423,
+											"parameters": {
+												"axes": "x"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "append-text",
+											"objectClass": "LogText",
+											"sid": 768261534092950,
+											"parameters": {
+												"text": "LogMessages.CurValue & newline"
+											}
+										}
+									],
+									"sid": 216289521687337
+								}
+							]
+						}
+					],
+					"sid": 980787836509891
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Signalling",
+					"description": "Manages connecting to the signalling server and joining the room.",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "On start of layout, connect to the signalling server. We also set up which client input values the peers will be using, and sync the Peer object with its position and additional instance variables for the look position, current inputs and player stats."
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-created",
-									"objectClass": "Player",
-									"sid": 907748929531179
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 216849179318382
 								}
 							],
 							"actions": [
 								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 886902386912868,
+									"id": "add-client-input-value",
+									"objectClass": "Multiplayer",
+									"sid": 695640176571992,
+									"disabled": true,
 									"parameters": {
-										"instance-variable": "peerid",
-										"value": "Multiplayer.MyID"
+										"tag": "\"x\"",
+										"precision": "low-int16-2-bytes",
+										"interpolation": "linear"
 									}
 								},
 								{
-									"id": "associate-object-with-peer",
+									"id": "add-client-input-value",
 									"objectClass": "Multiplayer",
-									"sid": 880254308439063,
+									"sid": 358974849360476,
+									"disabled": true,
+									"parameters": {
+										"tag": "\"y\"",
+										"precision": "low-int16-2-bytes",
+										"interpolation": "linear"
+									}
+								},
+								{
+									"id": "sync-object",
+									"objectClass": "Multiplayer",
+									"sid": 729140321660460,
 									"parameters": {
 										"object": "Player",
-										"peer-id": "Multiplayer.MyID"
+										"data": "position-only",
+										"precision": "low-int16-2-bytes",
+										"bandwidth": "normal-bandwidth-unpredictable"
+									}
+								},
+								{
+									"id": "sync-instance-variable",
+									"objectClass": "Multiplayer",
+									"sid": 229102588387474,
+									"parameters": {
+										"object": "Player",
+										"instance-variable": {
+											"name": "points",
+											"objectClass": "Player"
+										},
+										"precision": "low-int16-2-bytes",
+										"interpolation": "none",
+										"client-value-tag": "\"\""
+									}
+								},
+								{
+									"id": "connect",
+									"objectClass": "Multiplayer",
+									"sid": 622183511676632,
+									"parameters": {
+										"server": "\"wss://multiplayer.scirra.com\""
 									}
 								}
 							],
-							"sid": 499237657844945,
+							"sid": 622516958030408
+						},
+						{
+							"eventType": "comment",
+							"text": "When connected, request to log in."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-connected",
+									"objectClass": "Multiplayer",
+									"sid": 432531333799241
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AddLog",
+									"sid": 657274029037677,
+									"parameters": [
+										"\"Connected, logging in...\""
+									]
+								},
+								{
+									"id": "log-in",
+									"objectClass": "Multiplayer",
+									"sid": 812708182033310,
+									"parameters": {
+										"alias": "\"User \"&random(1-50)"
+									}
+								}
+							],
+							"sid": 277458104297603
+						},
+						{
+							"eventType": "comment",
+							"text": "When logged in, request to join the room. Use auto-join to assign pairs of players in to separate rooms."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-logged-in",
+									"objectClass": "Multiplayer",
+									"sid": 604529046197564
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AddLog",
+									"sid": 754959007630836,
+									"parameters": [
+										"\"Logged in with alias: \" & Multiplayer.MyAlias & \" (\" & Multiplayer.MyID & \")\" & newline & \"Joining room...\""
+									]
+								},
+								{
+									"id": "auto-join-room",
+									"objectClass": "Multiplayer",
+									"sid": 166920019866375,
+									"parameters": {
+										"game": "GAME_NAME",
+										"instance": "INSTANCE_NAME",
+										"first-room": "ROOM_NAME",
+										"max-peers": "2",
+										"locking": "lock-when-full"
+									}
+								}
+							],
+							"sid": 310186467569775
+						},
+						{
+							"eventType": "comment",
+							"text": "We joined the room: activate either the Host or the Peer group."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-joined-room",
+									"objectClass": "Multiplayer",
+									"sid": 460652525705379
+								}
+							],
+							"actions": [],
+							"sid": 127632608985919,
 							"children": [
 								{
 									"eventType": "comment",
-									"text": "If the peer that is created represents the local player, enable local input prediction for it. This means instead of being locked to whatever position it is on the host, it can start to move around. However as it moves it will correct its position if it starts to deviate from where it is on the host, so it's important both the peer and the host move it in exactly the same way."
+									"text": "As the host, we also adopt the existing paddle object on the left of the layout as our own. We must set its peer ID to our own ID and tell the Multiplayer object it is associated with ourselves."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-host",
+											"objectClass": "Multiplayer",
+											"sid": 390946930980547
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "AddLog",
+											"sid": 808724065350608,
+											"parameters": [
+												"\"Joined room as host, waiting for peer...\""
+											]
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 790673428719930,
+											"parameters": {
+												"group-name": "\"Host\"",
+												"state": "activated"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 378719093411876,
+											"parameters": {
+												"instance-variable": "peerid",
+												"value": "Multiplayer.MyID"
+											}
+										},
+										{
+											"id": "associate-object-with-peer",
+											"objectClass": "Multiplayer",
+											"sid": 546319730880830,
+											"parameters": {
+												"object": "Player",
+												"peer-id": "Multiplayer.MyID"
+											}
+										}
+									],
+									"sid": 191005551219756
+								},
+								{
+									"eventType": "comment",
+									"text": "When not the host, the paddle object already in the layout is destroyed. 'Sync object' will create both paddles, and they'll be associated with the correct player using the 'On created' trigger in the 'Peer' group. Also since the game is 2-player, it can begin as soon as the peer joins since we know the host is already there, so update the game state to \"getready\"."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 223684409968916
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "AddLog",
+											"sid": 374394903815158,
+											"parameters": [
+												"\"Joined room as peer\""
+											]
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 398596819620756,
+											"parameters": {
+												"group-name": "\"Peer\"",
+												"state": "activated"
+											}
+										},
+										{
+											"callFunction": "AddLog",
+											"sid": 468995538445590,
+											"parameters": [
+												"\"Attempting to establish connection to host...\""
+											]
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Player",
+											"sid": 131864339440154
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 494035093240005,
+											"parameters": {
+												"variable": "GameState",
+												"value": "\"getready\""
+											}
+										}
+									],
+									"sid": 747188816866539
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "If we leave, get disconnected or encounter an error, add it to the log."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-disconnected",
+									"objectClass": "Multiplayer",
+									"sid": 353607286877401
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AddLog",
+									"sid": 252537679458302,
+									"parameters": [
+										"\"Signalling disconnected\""
+									]
+								}
+							],
+							"sid": 171683741393255
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-error",
+									"objectClass": "Multiplayer",
+									"sid": 906976159510839
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AddLog",
+									"sid": 622653788682131,
+									"parameters": [
+										"\"Signalling error: \" & Multiplayer.ErrorMessage"
+									]
+								}
+							],
+							"sid": 730965761219548
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-left-room",
+									"objectClass": "Multiplayer",
+									"sid": 169078054662510
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AddLog",
+									"sid": 998563137758189,
+									"parameters": [
+										"\"Signalling: left room\""
+									]
+								}
+							],
+							"sid": 422656448116045
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-kicked",
+									"objectClass": "Multiplayer",
+									"sid": 205826389930510
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "AddLog",
+									"sid": 464521544022883,
+									"parameters": [
+										"\"Kicked (either could not connect to host or host quit)\""
+									]
+								}
+							],
+							"sid": 180990430454276
+						},
+						{
+							"eventType": "comment",
+							"text": "Update the NetStats text object in the bottom left with details like the peer count, inbound and outbound bandwidth, host ping and PDV."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 818734019174253
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "NetStats",
+									"sid": 722381794568441,
+									"parameters": {
+										"text": "Multiplayer.StatInboundCount & \" in (\" & (round(Multiplayer.StatInboundBandwidth/100)/10) & \" k) / sec\" & newline & Multiplayer.StatOutboundCount & \" out (\" & (round(Multiplayer.StatOutboundBandwidth/100)/10) & \" k) / sec\" & newline & \"Host ping \" & round(Multiplayer.PeerLatency(Multiplayer.HostID)) & \", PDV \" & round(Multiplayer.PeerPDV(Multiplayer.HostID))"
+									}
+								}
+							],
+							"sid": 191268773600344
+						}
+					],
+					"sid": 611046903968348
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Game",
+					"description": "Manages the gameplay and synchronisation.",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Peer",
+							"description": "Events specific to peers (i.e. non-host users)",
+							"isActiveOnStart": false,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "When a Peer is created from 'Sync object', Multiplayer.PeerID has the ID of the peer that the object represents. This must be stored in an instance variable so we can later identify which peer the object represents."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "Player",
+											"sid": 245109323120907
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 728862269677496,
+											"parameters": {
+												"instance-variable": "peerid",
+												"value": "Multiplayer.PeerID"
+											}
+										},
+										{
+											"id": "associate-object-with-peer",
+											"objectClass": "Multiplayer",
+											"sid": 716766816437609,
+											"parameters": {
+												"object": "Player",
+												"peer-id": "Multiplayer.PeerID"
+											}
+										}
+									],
+									"sid": 241435581544627
+								},
+								{
+									"eventType": "comment",
+									"text": "The peer's only input is where their paddle is, which is always the mouse Y co-ordinate. So just send our mouse position as the Y input."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-client-update",
+											"objectClass": "Multiplayer",
+											"sid": 671135261952917
+										}
+									],
+									"actions": [
+										{
+											"id": "set-client-state",
+											"objectClass": "Multiplayer",
+											"sid": 694241786868379,
+											"disabled": true,
+											"parameters": {
+												"tag": "\"x\"",
+												"value": "Mouse.X(\"Game\")"
+											}
+										},
+										{
+											"id": "set-client-state",
+											"objectClass": "Multiplayer",
+											"sid": 403892325575753,
+											"disabled": true,
+											"parameters": {
+												"tag": "\"y\"",
+												"value": "Mouse.Y(\"Game\")"
+											}
+										}
+									],
+									"sid": 522424961041299
+								},
+								{
+									"eventType": "comment",
+									"text": "If the host indicates that the game state has changed, update the GameState global variable. The 'Common' group changes the display when this changes."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-peer-message",
+											"objectClass": "Multiplayer",
+											"sid": 126218916232174,
+											"parameters": {
+												"tag": "\"gamestate-changed\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 960826807964582,
+											"parameters": {
+												"variable": "GameState",
+												"value": "Multiplayer.Message"
+											}
+										}
+									],
+									"sid": 883546646905323
+								}
+							],
+							"sid": 223686421278697
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Host",
+							"description": "Events specific to the host.",
+							"isActiveOnStart": false,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "As the host, when a peer joins we create a new paddle for them on the right. 'Sync object' will cause it to be created for the peer too. We also begin the game: we set the state to \"getready\" for 3 seconds, then upon \"go\" we set the ball moving and 1 second later set the state to \"started\" (so the score appears instead of \"GO!\")."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-peer-connected",
+											"objectClass": "Multiplayer",
+											"sid": 513878734998496
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 457700295337416,
+											"parameters": {
+												"object-to-create": "Player",
+												"layer": "\"Game\"",
+												"x": "LayoutWidth / 2",
+												"y": "LayoutHeight / 2",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 973974053734578,
+											"parameters": {
+												"instance-variable": "peerid",
+												"value": "Multiplayer.PeerID"
+											}
+										},
+										{
+											"id": "associate-object-with-peer",
+											"objectClass": "Multiplayer",
+											"sid": 434093062009992,
+											"parameters": {
+												"object": "Player",
+												"peer-id": "Multiplayer.PeerID"
+											}
+										},
+										{
+											"callFunction": "SetGameState",
+											"sid": 329021362826104,
+											"parameters": [
+												"\"getready\""
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 125315438550316,
+											"parameters": {
+												"seconds": "0.2"
+											}
+										},
+										{
+											"callFunction": "SetGameState",
+											"sid": 663539502894443,
+											"parameters": [
+												"\"go\""
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 265668005349575,
+											"parameters": {
+												"seconds": "0.2"
+											}
+										},
+										{
+											"callFunction": "SetGameState",
+											"sid": 837129815945038,
+											"parameters": [
+												"\"started\""
+											]
+										}
+									],
+									"sid": 803960271914761
+								},
+								{
+									"eventType": "comment",
+									"text": "This function updates the game state and also sends the new state to the peer so they see what the host sees."
+								},
+								{
+									"functionName": "SetGameState",
+									"functionDescription": "Automatically converted from 'SetGameState'",
+									"functionCategory": "",
+									"functionReturnType": "none",
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "state",
+											"type": "string",
+											"initialValue": "",
+											"comment": "",
+											"sid": 804744403510574
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 731252595522647,
+											"parameters": {
+												"variable": "GameState",
+												"value": "state"
+											}
+										},
+										{
+											"id": "broadcast-message",
+											"objectClass": "Multiplayer",
+											"sid": 927725723006115,
+											"parameters": {
+												"from-id": "\"\"",
+												"tag": "\"gamestate-changed\"",
+												"message": "GameState",
+												"mode": "reliable-ordered"
+											}
+										}
+									],
+									"sid": 554186214285941
+								}
+							],
+							"sid": 151207261325022
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Common",
+							"description": "Events that are common to both the host and peers.",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Whenever a peer joins or leaves, log the event so the user can see what happened."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-peer-connected",
+											"objectClass": "Multiplayer",
+											"sid": 334239415788420
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "AddLog",
+											"sid": 625476067678785,
+											"parameters": [
+												"\"'\" & Multiplayer.PeerAlias & \"' joined\""
+											]
+										}
+									],
+									"sid": 793292110820691
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-peer-disconnected",
+											"objectClass": "Multiplayer",
+											"sid": 929527118237993
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "AddLog",
+											"sid": 267639534585581,
+											"parameters": [
+												"\"'\" & Multiplayer.PeerAlias & \"' left\""
+											]
+										}
+									],
+									"sid": 193006994259529
+								},
+								{
+									"eventType": "comment",
+									"text": "Regardless of whether we are host or peer, we want our own paddle to position to the mouse."
 								},
 								{
 									"eventType": "block",
@@ -1210,7 +1390,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 331848961706813,
+											"sid": 891621849962771,
 											"parameters": {
 												"instance-variable": "peerid",
 												"comparison": 0,
@@ -1220,819 +1400,190 @@
 									],
 									"actions": [
 										{
-											"id": "associate-object-with-peer",
-											"objectClass": "Multiplayer",
-											"sid": 291576387130311,
-											"parameters": {
-												"object": "Player",
-												"peer-id": "Multiplayer.MyID"
-											}
-										}
-									],
-									"sid": 412319795829939
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "'On client update' triggers when the Multiplayer object is about to send our inputs to the host, so we need to update them. To save bandwidth, we use an 8-bit value in the 'inputs' instance variable. We store use five controls - arrow keys and shooting - represented as five bits in the 8-bit input number. 0 means not pressed and 1 means pressed. "
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-client-update",
-									"objectClass": "Multiplayer",
-									"sid": 517509911807119
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
-									"sid": 588459800057126,
-									"parameters": {
-										"instance-variable": "peerid",
-										"comparison": 0,
-										"value": "Multiplayer.MyID"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-client-state",
-									"objectClass": "Multiplayer",
-									"sid": 480856389220421,
-									"parameters": {
-										"tag": "\"lookx\"",
-										"value": "Mouse.X"
-									}
-								},
-								{
-									"id": "set-client-state",
-									"objectClass": "Multiplayer",
-									"sid": 188569882687015,
-									"parameters": {
-										"tag": "\"looky\"",
-										"value": "Mouse.Y"
-									}
-								}
-							],
-							"sid": 849768261692657,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "For each of the five controls, update the corresponding bit in 'inputs' to 1 for pressed or 0 for not pressed."
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 585641839668460,
-											"parameters": {
-												"object": "TiledBackground"
-											}
-										},
-										{
-											"id": "is-on-screen",
+											"id": "set-y",
 											"objectClass": "Player",
-											"sid": 418171254814072
-										}
-									],
-									"actions": [
-										{
-											"id": "rotate-toward-position",
-											"objectClass": "Player",
-											"sid": 867085940789453,
+											"sid": 226924026420531,
 											"parameters": {
-												"degrees": "8",
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 453088232977608,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 0, 1)"
+												"y": "Mouse.Y(\"Game\")"
 											}
 										}
 									],
-									"sid": 371407861044928
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 202603763158600
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 546529270123473,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 0, 0)"
-											}
-										}
-									],
-									"sid": 164957372761392
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 155396279943173,
-											"parameters": {
-												"object": "TiledBackground2"
-											}
-										},
-										{
-											"id": "is-on-screen",
-											"objectClass": "Player",
-											"sid": 315168460412203
-										}
-									],
-									"actions": [
-										{
-											"id": "rotate-toward-position",
-											"objectClass": "Player",
-											"sid": 383862539706196,
-											"parameters": {
-												"degrees": "8",
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 174788922657703,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 1, 1)"
-											}
-										}
-									],
-									"sid": 143368653932904
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 444367163568013
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 877079395958888,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 1, 0)"
-											}
-										}
-									],
-									"sid": 676065469269581
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 641360487723281,
-											"parameters": {
-												"object": "TiledBackground3"
-											}
-										},
-										{
-											"id": "is-on-screen",
-											"objectClass": "Player",
-											"sid": 173888698527367
-										}
-									],
-									"actions": [
-										{
-											"id": "rotate-toward-position",
-											"objectClass": "Player",
-											"sid": 836778848926593,
-											"parameters": {
-												"degrees": "8",
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 191117509083126,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 2, 1)"
-											}
-										}
-									],
-									"sid": 785072853756110
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 579724072518667
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 276692767479940,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 2, 0)"
-											}
-										}
-									],
-									"sid": 282539187282235
+									"sid": 476517040966134
 								},
 								{
 									"eventType": "comment",
-									"text": "After we've updated all the bits in the instance variable, set the client input state to the resulting value."
+									"text": "Syncing objects does not necessarily put objects on the right layer, since the layer information is not synced. So always ensure game objects are on the game layer."
 								},
 								{
 									"eventType": "block",
-									"conditions": [],
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 553956058495448
+										}
+									],
 									"actions": [
 										{
-											"id": "set-client-state",
-											"objectClass": "Multiplayer",
-											"sid": 487116542609661,
+											"id": "move-to-layer",
+											"objectClass": "Player",
+											"sid": 375758745075888,
 											"parameters": {
-												"tag": "\"inputs\"",
-												"value": "Player.inputs"
+												"layer": "\"Game\""
 											}
 										}
 									],
-									"sid": 995159563061460
+									"sid": 502502383217205
+								},
+								{
+									"eventType": "comment",
+									"text": "Update the score display text depending on the game state."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 736059205331990,
+											"parameters": {
+												"variable": "GameState",
+												"comparison": 0,
+												"value": "\"getready\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "ScoreDisplay",
+											"sid": 995737208060098,
+											"parameters": {
+												"text": "\"Get ready...\""
+											}
+										}
+									],
+									"sid": 970505534318777
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 886105293299417,
+											"parameters": {
+												"variable": "GameState",
+												"comparison": 0,
+												"value": "\"go\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "ScoreDisplay",
+											"sid": 498926271059800,
+											"parameters": {
+												"text": "\"GO!\""
+											}
+										}
+									],
+									"sid": 123185748485964
+								},
+								{
+									"eventType": "comment",
+									"text": "When \"started\", display the score: host on left and peer on right."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 669949274051279,
+											"parameters": {
+												"variable": "GameState",
+												"comparison": 0,
+												"value": "\"started\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "ScoreDisplay",
+											"sid": 153195579470906,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 627096162298301,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 921818831710746,
+													"parameters": {
+														"instance-variable": "peerid",
+														"comparison": 0,
+														"value": "Multiplayer.HostID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "append-text",
+													"objectClass": "ScoreDisplay",
+													"sid": 134831905770686,
+													"parameters": {
+														"text": "Multiplayer.HostAlias & \" \" & Player.points & \" - \""
+													}
+												}
+											],
+											"sid": 321113065211062
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 204489913126671,
+													"parameters": {
+														"instance-variable": "peerid",
+														"comparison": 0,
+														"value": "Multiplayer.HostID"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "append-text",
+													"objectClass": "ScoreDisplay",
+													"sid": 182057503900900,
+													"parameters": {
+														"text": "Player.points & \" \" & Multiplayer.PeerAliasFromID(Player.peerid)"
+													}
+												}
+											],
+											"sid": 560165079064745
+										}
+									]
 								}
-							]
+							],
+							"sid": 379684101458858
 						}
 					],
-					"sid": 832630153155678
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Host",
-					"description": "",
-					"isActiveOnStart": false,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "As the host, when a peer joins we create a new Peer object for them. 'Sync object' will then notify all the peers that this object was created. We set the created instance's peer ID variable to the associated peer. Finally we use the 'Associate object' action in the Multiplayer object to tell it that this instance represents that peer."
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-peer-connected",
-									"objectClass": "Multiplayer",
-									"sid": 388935405125461
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 590045166197856,
-									"parameters": {
-										"object-to-create": "Player",
-										"layer": "0",
-										"x": "random(50, LayoutWidth - 50)",
-										"y": "random(50, LayoutHeight - 50)",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 394102771494919,
-									"parameters": {
-										"instance-variable": "peerid",
-										"value": "Multiplayer.MyID"
-									}
-								},
-								{
-									"id": "associate-object-with-peer",
-									"objectClass": "Multiplayer",
-									"sid": 511719894583608,
-									"parameters": {
-										"object": "Player",
-										"peer-id": "Multiplayer.MyID"
-									}
-								}
-							],
-							"sid": 537457303322063
-						},
-						{
-							"eventType": "comment",
-							"text": "As the host, we can control our own object directly. We do not need to send the input state anywhere or worry about input prediction; as the host we run the authoritative version of the game. Therefore unlike with peers we can use keyboard and mouse input directly."
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
-									"sid": 786503565638905,
-									"parameters": {
-										"instance-variable": "peerid",
-										"comparison": 0,
-										"value": "Multiplayer.MyID"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-client-state",
-									"objectClass": "Multiplayer",
-									"sid": 818334005407967,
-									"parameters": {
-										"tag": "\"lookx\"",
-										"value": "Mouse.X"
-									}
-								},
-								{
-									"id": "set-client-state",
-									"objectClass": "Multiplayer",
-									"sid": 421245506875821,
-									"parameters": {
-										"tag": "\"looky\"",
-										"value": "Mouse.Y"
-									}
-								}
-							],
-							"sid": 659679701903557,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "For each of the five controls, update the corresponding bit in 'inputs' to 1 for pressed or 0 for not pressed."
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 422174430391934,
-											"parameters": {
-												"object": "TiledBackground"
-											}
-										},
-										{
-											"id": "is-on-screen",
-											"objectClass": "Player",
-											"sid": 109489715775972
-										}
-									],
-									"actions": [
-										{
-											"id": "rotate-toward-position",
-											"objectClass": "Player",
-											"sid": 922438564115602,
-											"parameters": {
-												"degrees": "8",
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 141504212834586,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 0, 1)"
-											}
-										}
-									],
-									"sid": 794948809185616
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 529166073037951
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 947217907505938,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 0, 0)"
-											}
-										}
-									],
-									"sid": 719666146793752
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 376067004079626,
-											"parameters": {
-												"object": "TiledBackground2"
-											}
-										},
-										{
-											"id": "is-on-screen",
-											"objectClass": "Player",
-											"sid": 229951854607097
-										}
-									],
-									"actions": [
-										{
-											"id": "rotate-toward-position",
-											"objectClass": "Player",
-											"sid": 910122858887776,
-											"parameters": {
-												"degrees": "8",
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 825093359433697,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 1, 1)"
-											}
-										}
-									],
-									"sid": 993149666308729
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 552527304219216
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 585766774475929,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 1, 0)"
-											}
-										}
-									],
-									"sid": 939584753627272
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 239405558992692,
-											"parameters": {
-												"object": "TiledBackground3"
-											}
-										},
-										{
-											"id": "is-on-screen",
-											"objectClass": "Player",
-											"sid": 176588673591523
-										}
-									],
-									"actions": [
-										{
-											"id": "rotate-toward-position",
-											"objectClass": "Player",
-											"sid": 834761062308518,
-											"parameters": {
-												"degrees": "8",
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 306087213839870,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 2, 1)"
-											}
-										}
-									],
-									"sid": 199116159147116
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 544119423978403
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 572021948777867,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 2, 0)"
-											}
-										}
-									],
-									"sid": 584390502341879
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "As host, we also need to update all the other players to reflect what they are doing. Therefore we iterate all peers who are *not* our own player, and update their instance variables based on their latest received inputs (from the PeerState expression)."
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
-									"sid": 253127235305889,
-									"parameters": {
-										"instance-variable": "peerid",
-										"comparison": 1,
-										"value": "Multiplayer.MyID"
-									}
-								},
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 534977147082812,
-									"parameters": {
-										"object": "Player"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 457070784340928,
-									"parameters": {
-										"instance-variable": "lookatx",
-										"value": "Multiplayer.PeerState(Player.peerid,\"lookx\")"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 913590069877229,
-									"parameters": {
-										"instance-variable": "lookaty",
-										"value": "Multiplayer.PeerState(Player.peerid,\"looky\")"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 442483057410555,
-									"parameters": {
-										"instance-variable": "inputs",
-										"value": "Multiplayer.PeerState(Player.peerid, \"inputs\")"
-									}
-								}
-							],
-							"sid": 885301858463219,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "As host we are also responsible for moving each peer. Now that we have updated the 'inputs' variable, we can simulate controls for the player depending on what their current inputs are. Since the host has the authoritative version of the game, this is their \"true\" movement; the peers will be moving themselves immediately, but if there is a discrepency, the host takes precedent and the peer must correct its own position to match that of the host."
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 680788211278252,
-											"parameters": {
-												"object": "TiledBackground"
-											}
-										},
-										{
-											"id": "is-on-screen",
-											"objectClass": "Player",
-											"sid": 914618682507850
-										}
-									],
-									"actions": [
-										{
-											"id": "rotate-toward-position",
-											"objectClass": "Player",
-											"sid": 884322221373428,
-											"parameters": {
-												"degrees": "8",
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 840964251939762,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 0, 1)"
-											}
-										}
-									],
-									"sid": 180304005584340
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 632176309155317
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 235649372078597,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 0, 0)"
-											}
-										}
-									],
-									"sid": 967043619403784
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 509404414399358,
-											"parameters": {
-												"object": "TiledBackground2"
-											}
-										},
-										{
-											"id": "is-on-screen",
-											"objectClass": "Player",
-											"sid": 680510049942280
-										}
-									],
-									"actions": [
-										{
-											"id": "rotate-toward-position",
-											"objectClass": "Player",
-											"sid": 543146143153069,
-											"parameters": {
-												"degrees": "8",
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 853587713850313,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 1, 1)"
-											}
-										}
-									],
-									"sid": 933172397808652
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 350253425000645
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 589881478834573,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 1, 0)"
-											}
-										}
-									],
-									"sid": 938683643944353
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 209906624806019,
-											"parameters": {
-												"object": "TiledBackground3"
-											}
-										},
-										{
-											"id": "is-on-screen",
-											"objectClass": "Player",
-											"sid": 943879710499571
-										}
-									],
-									"actions": [
-										{
-											"id": "rotate-toward-position",
-											"objectClass": "Player",
-											"sid": 264038622072698,
-											"parameters": {
-												"degrees": "8",
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 221574170047496,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 2, 1)"
-											}
-										}
-									],
-									"sid": 481926509366191
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 851441630065987
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 376100923390190,
-											"parameters": {
-												"instance-variable": "inputs",
-												"value": "setbit(Self.inputs, 2, 0)"
-											}
-										}
-									],
-									"sid": 369918554248206
-								}
-							]
-						}
-					],
-					"sid": 291570780614035
+					"sid": 923420103600661
 				}
 			],
-			"sid": 830715570897652
+			"sid": 521087642829140
 		},
 		{
 			"eventType": "group",

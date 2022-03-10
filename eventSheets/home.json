@@ -184,14 +184,6 @@
 					"text": "Multi Players Starting"
 				},
 				{
-					"id": "set-text",
-					"objectClass": "ActivityLog",
-					"sid": 213999523020788,
-					"parameters": {
-						"text": "\"Connecting to Server\""
-					}
-				},
-				{
 					"type": "comment",
 					"text": "Connect to server where is socket already setup and listening for each players"
 				},

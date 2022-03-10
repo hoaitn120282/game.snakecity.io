@@ -23,28 +23,10 @@
 			"sid": 392470465074642
 		},
 		{
-			"name": "inputs",
+			"name": "points",
 			"type": "number",
 			"desc": "",
 			"sid": 801393972917428
-		},
-		{
-			"name": "health",
-			"type": "number",
-			"desc": "",
-			"sid": 716946549173515
-		},
-		{
-			"name": "kills",
-			"type": "number",
-			"desc": "",
-			"sid": 493231933247980
-		},
-		{
-			"name": "deaths",
-			"type": "number",
-			"desc": "",
-			"sid": 540840277809932
 		},
 		{
 			"name": "peerid",
